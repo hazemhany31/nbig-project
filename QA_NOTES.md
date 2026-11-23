@@ -21,3 +21,13 @@
 - No production deployment, purchases, key rotation, history rewriting or account-security changes were performed.
 - Existing business statistics and marketing facts were preserved from the supplied source, not independently certified. No new prices, testimonials, availability or performance promises were added.
 - This pass is not a security audit and does not certify that the whole site has no defects.
+
+## Complete-site redesign pass
+
+- Rebuilt the homepage as an architectural editorial layout and applied the shared identity to all eight project pages and both legal pages.
+- Checked all eight stage selections and all eight image galleries, including keyboard opening, next/previous, Escape and focus return.
+- Checked the 14 linked PDF references and internal route/anchor targets locally.
+- Fixed the Zayed Lagoons form status region so the shared submit handler works.
+- Added motion controls and OS reduced-motion support.
+- Private interactive preview deliberately does not send messages, place calls or download project PDFs. Repository links remain functional.
+- This is repository/local testing, not a claim of production deployment or successful live email delivery.

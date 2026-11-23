@@ -9,7 +9,7 @@ const NBIGGallery = (function () {
   let mediaBase = 'images/';
   let currentImages = [];
   let currentLbIndex = 0;
-  let lightbox, lbImg, lbCaption, lbNum, vmodal, vmodalVideo;
+  let lightbox, lbImg, lbCaption, lbNum, vmodal, vmodalVideo, lastFocus;
 
   function init(config) {
     const { mediaMap, projectLabel } = config;
@@ -71,6 +71,7 @@ const NBIGGallery = (function () {
         })(imgIdx);
       }
 
+      el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',item.title);el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
       grid.appendChild(el);
       setTimeout(function () { el.classList.add('visible'); }, 40 + idx * 50);
     });
@@ -92,6 +93,7 @@ const NBIGGallery = (function () {
     // Keyboard
     document.addEventListener('keydown', function (e) {
       if (lightbox.classList.contains('active')) {
+        if(e.key==='Tab'){const buttons=[...lightbox.querySelectorAll('button')].filter(b=>b.getClientRects().length);const first=buttons[0],last=buttons[buttons.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') lbPrev();
         if (e.key === 'ArrowRight') lbNext();
@@ -124,13 +126,16 @@ const NBIGGallery = (function () {
   }
 
   function openLightbox(idx) {
+    lastFocus=document.activeElement;
     currentLbIndex = idx;
     updateLightbox();
     lightbox.classList.add('active');
+    lightbox.setAttribute('role','dialog');lightbox.setAttribute('aria-modal','true');lightbox.setAttribute('aria-label','Project photos');document.getElementById('nbigLbClose').focus();
     document.body.style.overflow = 'hidden';
   }
   function closeLightbox() {
     lightbox.classList.remove('active');
+    if(lastFocus)lastFocus.focus();
     document.body.style.overflow = '';
   }
   function updateLightbox() {
