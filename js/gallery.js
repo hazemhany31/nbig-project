@@ -52,7 +52,7 @@ const NBIGGallery = (function () {
       } else {
         var imgIdx = currentImages.indexOf(item);
         var loadAttr = idx < 4 ? 'eager' : 'lazy';
-        var hasMobile = item.file.startsWith('zx-') || item.file.includes('mobile');
+        var hasMobile = item.file.startsWith('zx-') && !item.file.includes('mobile');
         var imgMarkup = hasMobile
           ? '<picture>' +
               '<source media="(max-width: 768px)" srcset="' + mobileSrc + '">' +
@@ -137,6 +137,7 @@ const NBIGGallery = (function () {
     var item = currentImages[currentLbIndex];
     if (!item) return;
     var src = mediaBase + item.file;
+    delete lbImg.dataset.jpg;
     lbImg.src = src;
     lbImg.onerror = function () {
       if (!this.dataset.jpg) {
