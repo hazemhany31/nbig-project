@@ -19,8 +19,8 @@ export function mountStudy(root){
  for(let i=0;i<8;i++){box(-2.4+i*.68,2.8,.75,.06,.4,1.5,'copper',4)}
  for(const x of [-3.7,3.7])for(const z of [-2.5,2.5]){box(x,-1.97,z,.12,1,.12,'copper');box(x,-1.36,z,.6,.78,.6,'leaf')}
  function rotate(v,layer){let [x,y,z]=v;y+=layer*state.split*.62;const cy=Math.cos(state.yaw),sy=Math.sin(state.yaw),cp=Math.cos(state.pitch),sp=Math.sin(state.pitch);const a=x*cy+z*sy,b=-x*sy+z*cy;return [a,y*cp+b*sp,-y*sp+b*cp]}
- function draw(t){if(dead)return;frame=requestAnimationFrame(draw);if(t-last<40||!state.visible||document.hidden)return;const dt=Math.min(80,t-last||40);last=t;if(state.auto&&!state.drag)state.yaw+=dt*.000085;state.split+=(state.target-state.split)*.1;
-  const ar=document.documentElement.lang==='ar'||root.closest('[lang=ar]');root.querySelectorAll('[data-study-en]').forEach(e=>{const txt=e.dataset[ar?'studyAr':'studyEn'];if(txt&&e.textContent!==txt)e.textContent=txt});
+ function draw(t){if(dead)return;frame=requestAnimationFrame(draw);if(t-last<40||document.hidden)return;const dt=Math.min(80,t-last||40);last=t;if(!state.visible)return;if(state.auto&&!state.drag)state.yaw+=dt*.000085;state.split+=(state.target-state.split)*.1;
+  const ar=(root.closest('[lang]')?.getAttribute('lang')||document.documentElement.lang)==='ar';root.querySelectorAll('[data-study-en]').forEach(e=>{const txt=e.dataset[ar?'studyAr':'studyEn'];if(txt&&e.textContent!==txt)e.textContent=txt});
   ctx.fillStyle='#dce6e2';ctx.fillRect(0,0,w,h);const scale=Math.min(w/14,h/(12.8+state.split*3))*state.zoom;const proj=v=>{const p=15/(15+v[2]);return [w*.5+v[0]*scale*p,h*(.50+state.split*.06)-v[1]*scale*p]};
   // Perspective ground grid.
   ctx.strokeStyle='rgba(26,78,82,.12)';ctx.lineWidth=1;for(let i=-8;i<=8;i++){for(const ab of [[[-8,-2.75,i],[8,-2.75,i]],[[i,-2.75,-8],[i,-2.75,8]]]){const a=proj(rotate(ab[0],0)),b=proj(rotate(ab[1],0));ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke()}}
