@@ -81,7 +81,7 @@
       ]
     }
   ],
-  "buildCommand": "node scripts/build-review.mjs",
+  "buildCommand": "node scripts/scripts/build-review.mjs",
   "outputDirectory": "review-dist",
   "framework": null
 }
