@@ -67,3 +67,6 @@ body.homepage #portfolio{padding-top:105px;padding-bottom:105px;background:radia
 
 /* Keep the project action readable in both languages. */
 .pg .pc-arrow{width:max-content;max-width:calc(100% - 48px);height:auto;min-height:40px;border-radius:30px;padding:9px 14px;gap:9px;white-space:nowrap;font-size:12px}.pg .pc-arrow span{display:inline}
+
+.nbig-scene[data-paused=true] .nbig-photo-card,.nbig-scene[data-paused=true] .nbig-motion-line{animation-play-state:paused}
+@media(max-width:580px){.ctas{padding:70px 24px}.ctas h2{font-size:2.15rem;line-height:1.15;overflow-wrap:normal}.ctas .cbs{gap:12px}}
