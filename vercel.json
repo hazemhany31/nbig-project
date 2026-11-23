@@ -1,0 +1,87 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/account-deletion",
+      "destination": "/account-deletion.html"
+    },
+    {
+      "source": "/cmc",
+      "destination": "/cmc.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/new-cmc",
+      "destination": "/new-cmc.html"
+    },
+    {
+      "source": "/sky-hills",
+      "destination": "/sky-hills.html"
+    },
+    {
+      "source": "/cmc-2",
+      "destination": "/cmc-2.html"
+    },
+    {
+      "source": "/zayed-hills",
+      "destination": "/zayed-hills.html"
+    },
+    {
+      "source": "/prime",
+      "destination": "/prime.html"
+    },
+    {
+      "source": "/lamar-residence",
+      "destination": "/lamar-residence.html"
+    },
+    {
+      "source": "/zayed-lagoons",
+      "destination": "/zayed-lagoons.html"
+    },
+    {
+      "source": "/zayed",
+      "destination": "/zayed-hills.html"
+    },
+    {
+      "source": "/lamar",
+      "destination": "/lamar-residence.html"
+    },
+    {
+      "source": "/cmc2",
+      "destination": "/cmc-2.html"
+    },
+    {
+      "source": "/cmc-3",
+      "destination": "/new-cmc.html"
+    },
+    {
+      "source": "/cmc3",
+      "destination": "/new-cmc.html"
+    },
+    {
+      "source": "/newcmc",
+      "destination": "/new-cmc.html"
+    },
+    {
+      "source": "/ihealthy/account-deletion",
+      "destination": "/account-deletion.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "buildCommand": "node scripts/build-review.mjs",
+  "outputDirectory": "review-dist",
+  "framework": null
+}
