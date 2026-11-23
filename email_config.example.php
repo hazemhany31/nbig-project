@@ -21,14 +21,20 @@ return [
         'to_name' => 'NBIG Recipient',               // اسم المستقبل
     ],
 
+    // Server-only secret. Prefer the RECAPTCHA_SECRET_KEY environment variable.
+    'recaptcha' => [
+        'secret' => 'YOUR_RECAPTCHA_SECRET_KEY',
+        'allowed_hosts' => ['new-build-egypt.com', 'www.new-build-egypt.com'],
+    ],
+
     // إعدادات إضافية
     'settings' => [
         'timeout' => 60,                             // مهلة الاتصال (ثانية)
         'charset' => 'UTF-8',                        // ترميز النص
         'debug' => false,                            // تفعيل وضع التصحيح
-        'verify_peer' => false,                      // التحقق من شهادة SSL
-        'verify_peer_name' => false,                 // التحقق من اسم الشهادة
-        'allow_self_signed' => true,                 // السماح بالشهادات الذاتية
+        'verify_peer' => true,                      // التحقق من شهادة SSL
+        'verify_peer_name' => true,                 // التحقق من اسم الشهادة
+        'allow_self_signed' => false,                 // السماح بالشهادات الذاتية
     ]
 ];
 ?>
