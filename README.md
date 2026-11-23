@@ -1,159 +1,39 @@
-# CMC Tower Landing Page
+# NBIG website
 
-## وصف المشروع
-صفحة هبوط احترافية لمشروع CMC Tower - مركز طبي متكامل في العاصمة الإدارية الجديدة. تم تصميم الصفحة لتطابق تماماً التصميم الأصلي للمشروع مع نفس الألوان والخطوط والمحتوى، مع تحسينات متقدمة للأداء والتوافق مع جميع الأجهزة.
+Bilingual English/Arabic property website using HTML, CSS, JavaScript and a PHP contact endpoint. No build step is required.
 
-## المميزات
+## Preview
 
-### التصميم
-- تصميم مطابق تماماً للصفحة الأصلية
-- نفس الألوان والخطوط (Work Sans)
-- نفس التخطيط والهيكل
-- متجاوب مع جميع الأجهزة (Mobile, Tablet, Desktop)
-- دعم كامل للغة الإنجليزية
-- تحسينات متقدمة للأداء والسرعة
+For the static pages:
 
-### الألوان المستخدمة
-- اللون الأساسي: `#003399` (أزرق داكن)
-- اللون الثانوي: `#00AFEF` (أزرق فاتح)
-- خلفية فاتحة: `#f8f9fa`
-- نص رمادي: `#666`
-
-### الأقسام
-1. **Hero Section** - القسم الرئيسي مع العنوان والوصف
-2. **Project Overview** - نظرة عامة على المشروع
-3. **Features & Amenities** - المميزات والخدمات
-4. **Strategic Location** - الموقع الاستراتيجي
-5. **Investment Opportunity** - فرص الاستثمار
-6. **CTA Section** - دعوة للعمل
-
-### التفاعلات
-- قائمة متجاوبة للهواتف المحمولة
-- تأثيرات حركية عند التمرير
-- أزرار واتساب واتصال مباشر
-- شريط وسائل التواصل الاجتماعي الثابت
-- شريط تقدم التمرير
-- زر العودة للأعلى
-- تأثيرات اللمس للأجهزة المحمولة
-- تحسينات الأداء المتقدمة
-
-## الملفات
-
-```
-cmc-landing/
-├── index.html          # الصفحة الرئيسية
-├── style.css           # ملف التصميم المحسن
-├── script.js           # ملف التفاعلات المحسن
-└── README.md          # هذا الملف
+```sh
+python3 -m http.server 8000
 ```
 
-## الاستخدام
+Open `http://localhost:8000`. Static hosting, including GitHub Pages, cannot run `send_email.php`. Use PHP hosting for the contact form and Apache with `mod_rewrite` for clean URLs.
 
-1. افتح ملف `index.html` في المتصفح
-2. الصفحة جاهزة للاستخدام مباشرة
-3. يمكن تعديل المحتوى في ملف `index.html`
-4. يمكن تعديل التصميم في ملف `style.css`
-5. يمكن تعديل التفاعلات في ملف `script.js`
+## Current layout
 
-## التخصيص
+- `index.html`: homepage and filterable property portfolio
+- Project HTML pages: existing project content, floor plans and galleries
+- `css/editorial.css`: shared off-white / forest-green visual system
+- `js/site-quality.js`: shared navigation, portfolio filtering and contact handling
+- `js/gallery.js`: project image/video lightboxes
+- `email_config.example.php`: server-only configuration template
+- `CPANEL_SETUP.md`: hosting and contact configuration
 
-### تغيير الألوان
-يمكن تغيير الألوان الرئيسية في ملف `style.css`:
-- اللون الأساسي: `#003399`
-- اللون الثانوي: `#00AFEF`
-- خلفية فاتحة: `#f8f9fa`
+The content, phone numbers, project facts and existing business statistics were retained from the supplied project, not independently certified. Confirm marketing facts and current availability before a production launch.
 
-### تغيير المحتوى
-- تعديل النصوص في ملف `index.html`
-- تغيير الصور في مجلد `../images/`
-- تحديث معلومات الاتصال
+## Contact form
 
-### إضافة أقسام جديدة
-1. أضف القسم في `index.html`
-2. أضف التصميم في `style.css`
-3. أضف التفاعلات في `script.js` إذا لزم الأمر
+Copy `email_config.example.php` to `email_config.php` on the server only and set working SMTP settings. Configure the reCAPTCHA secret with the `RECAPTCHA_SECRET_KEY` environment variable or the private configuration file. Keep the matching public site key in each form, and confirm the allowed hostname list.
 
-## المتطلبات
+No missing-secret fallback is permitted. Missing configuration returns JSON with HTTP 503. SMTP failure returns a generic error without exposing server details. Client code prevents parallel duplicate submissions, resets consumed CAPTCHA tokens and never reports success without a successful server response.
 
-- متصفح حديث يدعم CSS3 و ES6
-- اتصال بالإنترنت لتحميل الخطوط والأيقونات
-- الصور موجودة في مجلد `../images/`
+## Security action still required
 
-## الأداء
+A reCAPTCHA secret existed in the original published commit. Removing it from current code does not erase Git history. The service owner must replace/revoke the exposed key pair, update the public site keys and private server secret, and verify allowed domains. Never put the replacement secret in GitHub or chat. No credential rotation or history rewrite was performed as part of this code update.
 
-- تحسين الصور للويب
-- استخدام lazy loading للصور
-- ضغط ملفات CSS و JavaScript
-- استخدام CDN للخطوط والأيقونات
-- تحسين الأداء للشاشات المختلفة
-- تحسينات متقدمة للأداء
+## Verification
 
-## المميزات التقنية
-
-### إمكانية الوصول
-- دعم كامل للوحة المفاتيح
-- تخطيط منطقي للقراءة
-- نصوص بديلة للصور
-- تباين ألوان مناسب
-- دعم قارئات الشاشة
-
-### الأداء
-- تحميل سريع للصفحة
-- تحسين الصور
-- ضغط الملفات
-- تخزين مؤقت ذكي
-- تحسينات Core Web Vitals
-- مراقبة الأداء في الوقت الفعلي
-
-### الأمان
-- حماية من XSS
-- تحقق من المدخلات
-- تشفير البيانات الحساسة
-
-### التوافق مع الأجهزة
-- دعم كامل للهواتف المحمولة
-- تحسينات للأجهزة اللوحية
-- دعم الشاشات عالية الدقة
-- تحسينات اللمس للأجهزة المحمولة
-- دعم الوضع المظلم
-
-### تحسينات السرعة
-- تحميل متقدم للصور
-- تحسين الخطوط
-- ضغط الملفات
-- تحسين الرسوم المتحركة
-- إدارة الذاكرة المحسنة
-
-## التحسينات الجديدة
-
-### تحسينات الأداء
-- استخدام `throttle` و `debounce` للتحكم في الأحداث
-- تحسين الرسوم المتحركة باستخدام `will-change`
-- تحسين تحميل الصور باستخدام `IntersectionObserver`
-- تحسين الخطوط باستخدام `font-display: swap`
-
-### تحسينات الأجهزة المحمولة
-- تحسين التفاعل باللمس
-- منع التكبير عند النقر المزدوج
-- تحسين أحجام الأزرار للأجهزة المحمولة
-- تحسين القوائم المنسدلة
-
-### تحسينات إمكانية الوصول
-- دعم أفضل للوحة المفاتيح
-- تحسين التركيز والتنقل
-- دعم قارئات الشاشة
-- تحسين التباين والألوان
-
-### تحسينات المراقبة
-- مراقبة Core Web Vitals
-- تتبع أحداث المستخدم
-- مراقبة وقت التحميل
-- تتبع عمق التمرير
-
-## الدعم
-
-لأي استفسارات أو تعديلات، يرجى التواصل مع فريق التطوير.
-
----
-
-**تم التطوير بواسطة NBIG Developments**
+See `QA_NOTES.md` for the checks performed and their limits. These are code and local-browser checks, not proof of successful production mail delivery or live deployment.
