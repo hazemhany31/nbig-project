@@ -38,3 +38,5 @@ body.homepage .hero{background:radial-gradient(ellipse at 75% 38%,#0d536c 0,tran
 .ctas{background:linear-gradient(135deg,#103b50,#082334);color:var(--text)}.ctas p{color:#acc2cf}.policy-container,.sub-card,.contact-card-box,.callout-box{background:#0c2d40;color:var(--text)}.fmsg.error{background:#491f2b;color:#ffd6db}.fmsg.success{background:#123b36;color:#c0f7df}:focus-visible{outline:3px solid #70e3f2;outline-offset:5px}.nbig-scene{direction:ltr}
 .hero-banner .htag,.hero-banner h1,.hero-banner .hsub,.hero-banner .happ-notice{animation:none;opacity:1;transform:none}.hero-banner h1{color:#edf7fc}.hero-banner h1 span,.hero-banner .htag{color:#58d5e9}.hero-banner .hsub,.hero-banner .happ-notice{color:#bdd5e1}.hero-banner{background:linear-gradient(135deg,#0b293b,#10384b)}
 input:not([type=checkbox]):not([type=radio]),textarea,select{background:#082334;color:#edf7fc;border-color:#396379}input::placeholder,textarea::placeholder{color:#9db6c5}
+
+.mc i{display:none}.mc::after{content:"×";font:30px/1 Arial,sans-serif;color:#edf7fc}.mc{background:#123b50;border:1px solid #4a859c;border-radius:4px;min-height:44px;min-width:44px}
