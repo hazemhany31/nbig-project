@@ -1,56 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
 
+<html dir="ltr" lang="en">
 <head>
-  <!-- ============================================================
+<!-- ============================================================
        PRELOADS — critical images first, fonts second
   ============================================================ -->
-  <link rel="preload" as="image" href="images/zx-10-mobile.webp" media="(max-width:768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="images/zx-10.webp" media="(min-width:769px)" fetchpriority="high">
-
-  <!-- ============================================================
+<link as="image" fetchpriority="high" href="images/zx-10-mobile.webp" media="(max-width:768px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="images/zx-10.webp" media="(min-width:769px)" rel="preload"/>
+<!-- ============================================================
        META — charset & viewport must come before anything else
   ============================================================ -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ============================================================
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ============================================================
        SEO — Title, Description, Canonical, Favicon
   ============================================================ -->
-  <title>Zayed Lagoons | Roshdy Developments | Marketing: NBIG</title>
-  <meta name="description" content="Zayed Lagoons, developed by Roshdy Developments and marketed by NBIG, is a premium residential compound in Al Thawra Al Khadra, Sheikh Zayed City, with lagoons, pools, and lush green spaces. 3 min from Smart Village.">
-  <meta name="keywords" content="Zayed Lagoons, Roshdy Developments, NBIG, Sheikh Zayed City, luxury compound Egypt, Al Thawra Al Khadra, residential compound, lagoons compound">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="NBIG">
-  <link rel="canonical" href="https://new-build-egypt.com/zayed-lagoons">
-  <link rel="icon" href="images/logo.png" type="image/png">
-
-  <!-- ============================================================
+<title>Zayed Lagoons | Roshdy Developments | Marketing: NBIG</title>
+<meta content="Zayed Lagoons, developed by Roshdy Developments and marketed by NBIG, is a premium residential compound in Al Thawra Al Khadra, Sheikh Zayed City, with lagoons, pools, and lush green spaces. 3 min from Smart Village." name="description"/>
+<meta content="Zayed Lagoons, Roshdy Developments, NBIG, Sheikh Zayed City, luxury compound Egypt, Al Thawra Al Khadra, residential compound, lagoons compound" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="NBIG" name="author"/>
+<link href="https://new-build-egypt.com/zayed-lagoons" rel="canonical"/>
+<link href="images/logo.png" rel="icon" type="image/png"/>
+<!-- ============================================================
        OPEN GRAPH (Facebook / LinkedIn / WhatsApp)
   ============================================================ -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://new-build-egypt.com/zayed-lagoons">
-  <meta property="og:title" content="Zayed Lagoons | Roshdy Developments | Marketing: NBIG">
-  <meta property="og:description" content="Zayed Lagoons in Sheikh Zayed City, developed by Roshdy Developments and marketed by NBIG. Scenic lagoons, pools, 24/7 security, and flexible payment plans.">
-  <meta property="og:image" content="https://new-build-egypt.com/images/zx-10.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="NBIG">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ar_EG">
-
-  <!-- ============================================================
+<meta content="website" property="og:type"/>
+<meta content="https://new-build-egypt.com/zayed-lagoons" property="og:url"/>
+<meta content="Zayed Lagoons | Roshdy Developments | Marketing: NBIG" property="og:title"/>
+<meta content="Zayed Lagoons in Sheikh Zayed City, developed by Roshdy Developments and marketed by NBIG. Scenic lagoons, pools, 24/7 security, and flexible payment plans." property="og:description"/>
+<meta content="https://new-build-egypt.com/images/zx-10.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="NBIG" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="ar_EG" property="og:locale:alternate"/>
+<!-- ============================================================
        TWITTER CARD
   ============================================================ -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zayed Lagoons | Roshdy Developments | Marketing: NBIG">
-  <meta name="twitter:description" content="Zayed Lagoons: developed by Roshdy Developments and marketed by NBIG. Premium residential living in Sheikh Zayed City.">
-  <meta name="twitter:image" content="https://new-build-egypt.com/images/zx-10.jpg">
-
-  <!-- ============================================================
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Zayed Lagoons | Roshdy Developments | Marketing: NBIG" name="twitter:title"/>
+<meta content="Zayed Lagoons: developed by Roshdy Developments and marketed by NBIG. Premium residential living in Sheikh Zayed City." name="twitter:description"/>
+<meta content="https://new-build-egypt.com/images/zx-10.jpg" name="twitter:image"/>
+<!-- ============================================================
        STRUCTURED DATA — LocalBusiness
   ============================================================ -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
@@ -81,30 +76,26 @@
     }
   }
   </script>
-
-  <!-- ============================================================
+<!-- ============================================================
        FONTS — preconnect first, then preload stylesheet
   ============================================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"></noscript>
-
-  <!-- ============================================================
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- ============================================================
        FONT AWESOME — deferred load
   ============================================================ -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-
-  <!-- ============================================================
+<link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></noscript>
+<!-- ============================================================
        reCAPTCHA
   ============================================================ -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-  <!-- ============================================================
+<script async="" defer="" src="https://www.google.com/recaptcha/api.js"></script>
+<!-- ============================================================
        CRITICAL CSS — inlined for zero render-blocking
   ============================================================ -->
-  <style>
+<style>
     /* ── Design Tokens ──────────────────────────────────────── */
     :root {
       --gold: #c9a84c;
@@ -724,220 +715,211 @@
       .project-credits { margin-bottom: 24px; }
     }
   </style>
-  <link rel="stylesheet" href="css/editorial.css">
-  <script src="js/site-quality.js" defer></script>
+<link href="css/editorial.css" rel="stylesheet"/>
+<script defer="" src="js/site-quality.js"></script>
 </head>
-
-<body>
-
-  <!-- ============================================================
+<body class="nbig-complete project-page">
+<!-- ============================================================
        PAGE LOADER
   ============================================================ -->
-  <div id="loader" role="status" aria-label="Loading Zayed Lagoons">
-    <div class="li">
-      <img class="ll" src="images/logo.webp" alt="NBIG Logo" width="80" height="80">
-      <div class="lr" aria-hidden="true"></div>
-    </div>
-  </div>
-
-  <!-- ============================================================
+<div aria-label="Loading Zayed Lagoons" id="loader" role="status">
+<div class="li">
+<img alt="NBIG Logo" class="ll" height="80" src="images/logo.webp" width="80"/>
+<div aria-hidden="true" class="lr"></div>
+</div>
+</div>
+<!-- ============================================================
        SOCIAL SIDEBAR
   ============================================================ -->
-  <aside class="ss" aria-label="Social media links">
-    <a href="https://www.facebook.com/nbigdevelopments" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-    <a href="https://www.instagram.com/nbigdevelopments/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-    <a href="https://www.youtube.com/@nbigdevelopments6485" target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-    <a href="https://wa.me/201112221121" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-    <a href="tel:19938" aria-label="Call our helpline 19938"><i class="fas fa-phone" aria-hidden="true"></i></a>
-  </aside>
-
-  <!-- ============================================================
+<aside aria-label="Social media links" class="ss">
+<a aria-label="Follow us on Facebook" href="https://www.facebook.com/nbigdevelopments" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+<a aria-label="Follow us on Instagram" href="https://www.instagram.com/nbigdevelopments/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+<a aria-label="Watch us on YouTube" href="https://www.youtube.com/@nbigdevelopments6485" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+<a aria-label="Chat on WhatsApp" href="https://wa.me/201112221121" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+<a aria-label="Call our helpline 19938" href="tel:19938"><i aria-hidden="true" class="fas fa-phone"></i></a>
+</aside>
+<!-- ============================================================
        HEADER
   ============================================================ -->
-  <header id="header" role="banner">
-    <div class="logo">
-      <a href="index.html" aria-label="NBIG – Home">
-        <img src="images/logo.webp" alt="NBIG" width="50" height="50" class="header-logo">
-      </a>
-    </div>
-    <nav aria-label="Main navigation">
-      <button class="mt" id="mt" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nm">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
-      <ul id="nm" role="menubar">
-        <button class="mc" id="mc" aria-label="Close navigation menu"><i class="fas fa-times" aria-hidden="true"></i></button>
-        <li role="none"><a href="https://new-build-egypt.com/#services" role="menuitem" data-t="ns">Services</a></li>
-        <li role="none"><a href="https://new-build-egypt.com/#portfolio" role="menuitem" data-t="np">Projects</a></li>
-        <li role="none"><a href="https://new-build-egypt.com/#about" role="menuitem" data-t="na">About</a></li>
-        <li role="none"><a href="#contact" role="menuitem" data-t="nc">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="ls" role="group" aria-label="Language selector">
-      <button class="lb active" id="ben" aria-pressed="true" aria-label="Switch to English">EN</button>
-      <button class="lb" id="bar" aria-pressed="false" aria-label="Switch to Arabic">AR</button>
-    </div>
-  </header>
-
-  <!-- ============================================================
+<header id="header" role="banner">
+<div class="logo">
+<a aria-label="NBIG – Home" href="index.html">
+<img alt="NBIG" class="header-logo" height="50" src="images/logo.webp" width="50"/>
+</a>
+</div>
+<nav aria-label="Main navigation">
+<button aria-controls="nm" aria-expanded="false" aria-label="Open navigation menu" class="mt" id="mt">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+<ul id="nm" role="menubar">
+<button aria-label="Close navigation menu" class="mc" id="mc"><i aria-hidden="true" class="fas fa-times"></i></button>
+<li role="none"><a data-t="ns" href="index.html#services" role="menuitem">Services</a></li>
+<li role="none"><a data-t="np" href="index.html#portfolio" role="menuitem">Projects</a></li>
+<li role="none"><a data-t="na" href="index.html#about" role="menuitem">About</a></li>
+<li role="none"><a data-t="nc" href="#contact" role="menuitem">Contact</a></li>
+</ul>
+</nav>
+<div aria-label="Language selector" class="ls" role="group">
+<button aria-label="Switch to English" aria-pressed="true" class="lb active" id="ben">EN</button>
+<button aria-label="Switch to Arabic" aria-pressed="false" class="lb" id="bar">AR</button>
+</div>
+</header>
+<!-- ============================================================
        HERO
   ============================================================ -->
-  <section class="hero" aria-label="Zayed Lagoons Hero">
-    <div class="hs" id="hs" aria-hidden="true">
-      <div class="active">
-        <picture>
-          <source media="(max-width: 768px)" srcset="images/zx-10-mobile.webp">
-          <img src="images/zx-10.webp" alt="Zayed Lagoons – Commercial Hub & Clubhouse" style="width:100%;height:100%;object-fit:cover;" fetchpriority="high" loading="eager" decoding="async">
-        </picture>
-      </div>
-      <div>
-        <picture>
-          <source media="(max-width: 768px)" srcset="images/zx-02-mobile.webp">
-          <img src="images/zx-02.webp" alt="Zayed Lagoons – Central Lagoons & Courtyard" style="width:100%;height:100%;object-fit:cover;" loading="eager" decoding="async">
-        </picture>
-      </div>
-      <div>
-        <picture>
-          <source media="(max-width: 768px)" srcset="images/zx-01-mobile.webp">
-          <img src="images/zx-01.webp" alt="Zayed Lagoons – Compound Entrance & Boulevard" style="width:100%;height:100%;object-fit:cover;" loading="eager" decoding="async">
-        </picture>
-      </div>
-      <div>
-        <picture>
-          <source media="(max-width: 768px)" srcset="images/zx-08-mobile.webp">
-          <img src="images/zx-08.webp" alt="Zayed Lagoons – Courtyard Promenade" style="width:100%;height:100%;object-fit:cover;" loading="eager" decoding="async">
-        </picture>
-      </div>
-    </div>
-    <div class="hc">
-      <div class="hero-project-mark" style="animation:fadeUp .8s ease both;">
-        <img src="images/flags-logo.png" class="project-logo" alt="Zayed Lagoons Logo" style="object-fit:contain;border-radius:50%;display:block;transform:rotate(-270deg);" loading="eager" fetchpriority="high">
-      </div>
-      <!-- Semantic H1 — visible to screen-readers; visually rendered by setLang() -->
-      <h1 data-t="h1" style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;line-height:1.05;margin-bottom:20px;animation:fadeUp .8s .15s ease both;">
-        Zayed<br><span>Lagoons</span>
-      </h1>
-      <p class="hsub" data-t="hs2" style="margin-bottom:20px;">
+<section aria-label="Zayed Lagoons Hero" class="hero"><div class="project-breadcrumb"><a data-t="bh" href="index.html">← Home</a><span> / Zayed Lagoons</span></div>
+<div aria-hidden="true" class="hs" id="hs">
+<div class="active">
+<picture>
+<source media="(max-width: 768px)" srcset="images/zx-10-mobile.webp"/>
+<img alt="Zayed Lagoons – Commercial Hub &amp; Clubhouse" decoding="async" fetchpriority="high" loading="eager" src="images/zx-10.webp" style="width:100%;height:100%;object-fit:cover;"/>
+</picture>
+</div>
+<div>
+<picture>
+<source media="(max-width: 768px)" srcset="images/zx-02-mobile.webp"/>
+<img alt="Zayed Lagoons – Central Lagoons &amp; Courtyard" decoding="async" loading="eager" src="images/zx-02.webp" style="width:100%;height:100%;object-fit:cover;"/>
+</picture>
+</div>
+<div>
+<picture>
+<source media="(max-width: 768px)" srcset="images/zx-01-mobile.webp"/>
+<img alt="Zayed Lagoons – Compound Entrance &amp; Boulevard" decoding="async" loading="eager" src="images/zx-01.webp" style="width:100%;height:100%;object-fit:cover;"/>
+</picture>
+</div>
+<div>
+<picture>
+<source media="(max-width: 768px)" srcset="images/zx-08-mobile.webp"/>
+<img alt="Zayed Lagoons – Courtyard Promenade" decoding="async" loading="eager" src="images/zx-08.webp" style="width:100%;height:100%;object-fit:cover;"/>
+</picture>
+</div>
+</div>
+<div class="hc">
+<div class="hero-project-mark" style="animation:fadeUp .8s ease both;">
+<img alt="Zayed Lagoons Logo" class="project-logo" fetchpriority="high" loading="eager" src="images/flags-logo.png" style="object-fit:contain;border-radius:50%;display:block;transform:rotate(-270deg);"/>
+</div>
+<!-- Semantic H1 — visible to screen-readers; visually rendered by setLang() -->
+<h1 data-t="h1" style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;line-height:1.05;margin-bottom:20px;animation:fadeUp .8s .15s ease both;">
+        Zayed<br/><span>Lagoons</span>
+</h1>
+<p class="hsub" data-t="hs2" style="margin-bottom:20px;">
         A premium residential compound in the heart of Sheikh Zayed — where serene lagoons meet modern luxury living.
       </p>
-      <dl class="project-credits">
-        <div><dt data-t="developerLabel">Project Developer</dt><dd><bdi data-t="pd1">Roshdy Developments</bdi></dd></div>
-        <div><dt data-t="marketingLabel">Marketing</dt><dd><bdi data-t="pd2">NBIG</bdi></dd></div>
-      </dl>
-      <div class="hbtns">
-        <a href="tel:19938" class="bg" id="hero-hotline-btn">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <span data-t="cn">Hotline 19938</span>
-        </a>
-        <a href="tel:+201112221121" class="bg" id="hero-call-btn">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <span data-t="cn2">Call Now: 01112221121</span>
-        </a>
-        <a href="https://wa.me/201112221121" target="_blank" rel="noopener noreferrer" class="bo" id="hero-wa-btn">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          <span>WhatsApp</span>
-        </a>
-      </div>
-    </div>
-    <div class="hdots" id="hd" aria-hidden="true"></div>
-  </section>
-
-  <!-- ============================================================
+<dl class="project-credits">
+<div><dt data-t="developerLabel">Project Developer</dt><dd><bdi data-t="pd1">Roshdy Developments</bdi></dd></div>
+<div><dt data-t="marketingLabel">Marketing</dt><dd><bdi data-t="pd2">NBIG</bdi></dd></div>
+</dl>
+<div class="hbtns">
+<a class="bg" href="tel:19938" id="hero-hotline-btn">
+<i aria-hidden="true" class="fas fa-phone"></i>
+<span data-t="cn">Hotline 19938</span>
+</a>
+<a class="bg" href="tel:+201112221121" id="hero-call-btn">
+<i aria-hidden="true" class="fas fa-phone"></i>
+<span data-t="cn2">Call Now: 01112221121</span>
+</a>
+<a class="bo" href="https://wa.me/201112221121" id="hero-wa-btn" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fab fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+<div aria-hidden="true" class="hdots" id="hd"></div>
+</section>
+<!-- ============================================================
        STATS BAR
   ============================================================ -->
-  <div class="sbar" aria-label="Project statistics">
-    <div class="stat">
-      <div class="sn" aria-label="13 or more years of NBIG experience">13+</div>
-      <div class="sl" data-t="sy">NBIG Experience</div>
-    </div>
-    <div class="stat">
-      <div class="sn" aria-label="Ground plus 5 floors">G+5</div>
-      <div class="sl" data-t="sf">Floors</div>
-    </div>
-    <div class="stat">
-      <div class="sn" style="font-size:2rem;">Sheikh<br>Zayed</div>
-      <div class="sl" data-t="sloc">Prime Location</div>
-    </div>
-    <div class="stat">
-      <div class="sn" aria-label="100 percent fully finished">100%</div>
-      <div class="sl" data-t="sd">Fully Finished</div>
-    </div>
-  </div>
-
-  <!-- ============================================================
+<div aria-label="Project statistics" class="sbar">
+<div class="stat">
+<div aria-label="13 or more years of NBIG experience" class="sn">13+</div>
+<div class="sl" data-t="sy">NBIG Experience</div>
+</div>
+<div class="stat">
+<div aria-label="Ground plus 5 floors" class="sn">G+5</div>
+<div class="sl" data-t="sf">Floors</div>
+</div>
+<div class="stat">
+<div class="sn" style="font-size:2rem;">Sheikh<br/>Zayed</div>
+<div class="sl" data-t="sloc">Prime Location</div>
+</div>
+<div class="stat">
+<div aria-label="100 percent fully finished" class="sn">100%</div>
+<div class="sl" data-t="sd">Fully Finished</div>
+</div>
+</div>
+<!-- ============================================================
        PROJECT OVERVIEW
   ============================================================ -->
-  <section aria-labelledby="overview-heading">
-    <div class="ov2col reveal">
-      <div class="ovt">
-        <span class="stag" data-t="ot">The Project</span>
-        <h2 class="stitle" id="overview-heading" data-t="oti">Project Overview</h2>
-        <div class="ssep" aria-hidden="true"></div>
-        <p data-t="ox">Zayed Lagoons is a premium residential compound developed by Roshdy Developments and marketed by NBIG in one of Egypt's most prestigious locations — Sheikh Zayed City. The compound blends contemporary architecture with natural water features, lagoons, and lush landscaping to create a truly unique living experience.</p>
-        <ul class="cl" style="margin-top:8px;">
-          <li data-t="o1">Stunning lagoon and water feature designs throughout the compound</li>
-          <li data-t="o2">Modern residential apartments with premium finishes — G+5 typical buildings</li>
-          <li data-t="o4">State-of-the-art facilities including pools, gym, and clubhouse</li>
-          <li data-t="o5">Developed by Roshdy Developments · Marketed by NBIG</li>
-        </ul>
-      </div>
-      <div class="ovi">
-        <picture>
-          <source media="(max-width: 768px)" srcset="images/zx-02-mobile.webp">
-          <img src="images/zx-02.webp" alt="Zayed Lagoons – Overview of the compound and central lagoons" loading="lazy">
-        </picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section aria-labelledby="overview-heading">
+<div class="ov2col reveal">
+<div class="ovt">
+<span class="stag" data-t="ot">The Project</span>
+<h2 class="stitle" data-t="oti" id="overview-heading">Project Overview</h2>
+<div aria-hidden="true" class="ssep"></div>
+<p data-t="ox">Zayed Lagoons is a premium residential compound developed by Roshdy Developments and marketed by NBIG in one of Egypt's most prestigious locations — Sheikh Zayed City. The compound blends contemporary architecture with natural water features, lagoons, and lush landscaping to create a truly unique living experience.</p>
+<ul class="cl" style="margin-top:8px;">
+<li data-t="o1">Stunning lagoon and water feature designs throughout the compound</li>
+<li data-t="o2">Modern residential apartments with premium finishes — G+5 typical buildings</li>
+<li data-t="o4">State-of-the-art facilities including pools, gym, and clubhouse</li>
+<li data-t="o5">Developed by Roshdy Developments · Marketed by NBIG</li>
+</ul>
+</div>
+<div class="ovi">
+<picture>
+<source media="(max-width: 768px)" srcset="images/zx-02-mobile.webp"/>
+<img alt="Zayed Lagoons – Overview of the compound and central lagoons" loading="lazy" src="images/zx-02.webp"/>
+</picture>
+</div>
+</div>
+</section>
+<!-- ============================================================
        FEATURES & AMENITIES
   ============================================================ -->
-  <section class="fsec" aria-labelledby="features-heading">
-    <div style="text-align:center;">
-      <span class="stag" data-t="ft">Why Zayed Lagoons</span>
-      <h2 class="stitle" id="features-heading" data-t="fti">Features &amp; Amenities</h2>
-      <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
-    </div>
-    <div class="fg reveal">
-      <article class="fc">
-        <div class="fi" aria-hidden="true"><i class="fas fa-water"></i></div>
-        <h3 data-t="f1">Lagoons &amp; Water Features</h3>
-        <p data-t="f1d">Scenic lagoons and decorative water features create a tranquil resort-like atmosphere throughout the compound.</p>
-      </article>
-      <article class="fc">
-        <div class="fi" aria-hidden="true"><i class="fas fa-person-swimming"></i></div>
-        <h3 data-t="f2">Swimming Pools</h3>
-        <p data-t="f2d">Multiple swimming pools for adults and children, designed for both relaxation and recreation.</p>
-      </article>
-      <article class="fc">
-        <div class="fi" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
-        <h3 data-t="f3">24/7 Security</h3>
-        <p data-t="f3d">Round-the-clock security systems and professional guards ensuring the safety of all residents.</p>
-      </article>
-      <article class="fc">
-        <div class="fi" aria-hidden="true"><i class="fas fa-square-parking"></i></div>
-        <h3 data-t="f4">Private Parking</h3>
-        <p data-t="f4d">Dedicated underground and surface parking spaces for residents and guests.</p>
-      </article>
-      <article class="fc">
-        <div class="fi" aria-hidden="true"><i class="fas fa-leaf"></i></div>
-        <h3 data-t="f5">Lush Landscaping</h3>
-        <p data-t="f5d">Expansive green spaces, manicured gardens, and tree-lined walkways for a serene environment.</p>
-      </article>
-      <article class="fc">
-        <div class="fi" aria-hidden="true"><i class="fas fa-dumbbell"></i></div>
-        <h3 data-t="f6">Gym &amp; Clubhouse</h3>
-        <p data-t="f6d">Fully equipped gym, sports courts, and a premium clubhouse for residents' leisure and wellness.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section aria-labelledby="features-heading" class="fsec">
+<div style="text-align:center;">
+<span class="stag" data-t="ft">Why Zayed Lagoons</span>
+<h2 class="stitle" data-t="fti" id="features-heading">Features &amp; Amenities</h2>
+<div aria-hidden="true" class="ssep" style="margin:0 auto;"></div>
+</div>
+<div class="fg reveal">
+<article class="fc">
+<div aria-hidden="true" class="fi"><i class="fas fa-water"></i></div>
+<h3 data-t="f1">Lagoons &amp; Water Features</h3>
+<p data-t="f1d">Scenic lagoons and decorative water features create a tranquil resort-like atmosphere throughout the compound.</p>
+</article>
+<article class="fc">
+<div aria-hidden="true" class="fi"><i class="fas fa-person-swimming"></i></div>
+<h3 data-t="f2">Swimming Pools</h3>
+<p data-t="f2d">Multiple swimming pools for adults and children, designed for both relaxation and recreation.</p>
+</article>
+<article class="fc">
+<div aria-hidden="true" class="fi"><i class="fas fa-shield-halved"></i></div>
+<h3 data-t="f3">24/7 Security</h3>
+<p data-t="f3d">Round-the-clock security systems and professional guards ensuring the safety of all residents.</p>
+</article>
+<article class="fc">
+<div aria-hidden="true" class="fi"><i class="fas fa-square-parking"></i></div>
+<h3 data-t="f4">Private Parking</h3>
+<p data-t="f4d">Dedicated underground and surface parking spaces for residents and guests.</p>
+</article>
+<article class="fc">
+<div aria-hidden="true" class="fi"><i class="fas fa-leaf"></i></div>
+<h3 data-t="f5">Lush Landscaping</h3>
+<p data-t="f5d">Expansive green spaces, manicured gardens, and tree-lined walkways for a serene environment.</p>
+</article>
+<article class="fc">
+<div aria-hidden="true" class="fi"><i class="fas fa-dumbbell"></i></div>
+<h3 data-t="f6">Gym &amp; Clubhouse</h3>
+<p data-t="f6d">Fully equipped gym, sports courts, and a premium clubhouse for residents' leisure and wellness.</p>
+</article>
+</div>
+</section>
+<!-- ============================================================
        GALLERY
   ============================================================ -->
-  <!-- Legacy Static Gallery
+<!-- Legacy Static Gallery
   <section aria-labelledby="gallery-heading">
     <span class="stag" data-t="gt">Gallery</span>
     <h2 class="stitle" id="gallery-heading" data-t="gti">Project Visuals</h2>
@@ -951,299 +933,280 @@
     </div>
   </section>
   -->
-
-  <!-- ZAYED LAGOONS PREMIUM GALLERY -->
-  <link rel="stylesheet" href="css/gallery.css?v=20260918">
-  <section class="ngal-section" id="nbigGallerySection">
-    <div class="ngal-head">
-      <span class="stag">GALLERY</span>
-      <h2 class="stitle">Zayed Lagoons Visuals</h2>
-      <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
-      <p class="ngal-desc">Explore the latest construction progress, architectural renders, community spaces, and lifestyle experiences from Zayed Lagoons.</p>
-      <div class="ngal-count-wrap"><div class="ngal-count-badge"><i class="fas fa-images"></i> Media Files <span class="ngal-count-num" id="nbigGalCount">0</span></div></div>
-    </div>
-    <div class="ngal-grid" id="nbigGalGrid"></div>
-  </section>
-  <div class="ngal-lightbox" id="nbigGalLightbox">
-    <button class="ngal-lb-close" id="nbigLbClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
-    <button class="ngal-lb-prev" id="nbigLbPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-    <button class="ngal-lb-next" id="nbigLbNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
-    <div class="ngal-lb-content" id="nbigLbContent">
-      <img src="" alt="" id="nbigLbImg">
-      <div class="ngal-lb-caption">
-        <div class="ngal-lb-caption-text" id="nbigLbCaption"></div>
-        <div class="ngal-lb-caption-num" id="nbigLbNum"></div>
-      </div>
-    </div>
-  </div>
-  <div class="ngal-vmodal" id="nbigGalVmodal">
-    <button class="ngal-vmodal-close" id="nbigVmClose" aria-label="Close video"><i class="fas fa-times"></i></button>
-    <div class="ngal-vmodal-content">
-      <video id="nbigVmVideo" controls playsinline preload="none"></video>
-    </div>
-  </div>
-
-  <!-- ============================================================
+<!-- ZAYED LAGOONS PREMIUM GALLERY -->
+<link href="css/gallery.css?v=20260918" rel="stylesheet"/>
+<section class="ngal-section" id="nbigGallerySection">
+<div class="ngal-head">
+<span class="stag">GALLERY</span>
+<h2 class="stitle">Zayed Lagoons Visuals</h2>
+<div aria-hidden="true" class="ssep" style="margin:0 auto;"></div>
+<p class="ngal-desc">Explore the latest construction progress, architectural renders, community spaces, and lifestyle experiences from Zayed Lagoons.</p>
+<div class="ngal-count-wrap"><div class="ngal-count-badge"><i class="fas fa-images"></i> Media Files <span class="ngal-count-num" id="nbigGalCount">0</span></div></div>
+</div>
+<div class="ngal-grid" id="nbigGalGrid"></div>
+</section>
+<div class="ngal-lightbox" id="nbigGalLightbox">
+<button aria-label="Close lightbox" class="ngal-lb-close" id="nbigLbClose"><i class="fas fa-times"></i></button>
+<button aria-label="Previous image" class="ngal-lb-prev" id="nbigLbPrev"><i class="fas fa-chevron-left"></i></button>
+<button aria-label="Next image" class="ngal-lb-next" id="nbigLbNext"><i class="fas fa-chevron-right"></i></button>
+<div class="ngal-lb-content" id="nbigLbContent">
+<img alt="" id="nbigLbImg" src=""/>
+<div class="ngal-lb-caption">
+<div class="ngal-lb-caption-text" id="nbigLbCaption"></div>
+<div class="ngal-lb-caption-num" id="nbigLbNum"></div>
+</div>
+</div>
+</div>
+<div class="ngal-vmodal" id="nbigGalVmodal">
+<button aria-label="Close video" class="ngal-vmodal-close" id="nbigVmClose"><i class="fas fa-times"></i></button>
+<div class="ngal-vmodal-content">
+<video controls="" id="nbigVmVideo" playsinline="" preload="none"></video>
+</div>
+</div>
+<!-- ============================================================
        LOCATION
   ============================================================ -->
-  <section class="fsec" aria-labelledby="location-heading">
-    <div class="loc2 reveal">
-      <!-- Text column (left in LTR) -->
-      <div>
-        <span class="stag" data-t="lt">Where to Find Us</span>
-        <h2 class="stitle" id="location-heading" data-t="lti">Strategic Location</h2>
-        <div class="ssep" aria-hidden="true"></div>
-
-        <!-- Address badge -->
-        <address class="loc-address" style="font-style:normal;">
-          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          <span data-t="laddr">Al Thawra Al Khadra (Green Revolution), Sheikh Zayed City</span>
-        </address>
-
-        <p style="color:var(--muted);line-height:1.9;margin-bottom:20px;" data-t="ld">
+<section aria-labelledby="location-heading" class="fsec">
+<div class="loc2 reveal">
+<!-- Text column (left in LTR) -->
+<div>
+<span class="stag" data-t="lt">Where to Find Us</span>
+<h2 class="stitle" data-t="lti" id="location-heading">Strategic Location</h2>
+<div aria-hidden="true" class="ssep"></div>
+<!-- Address badge -->
+<address class="loc-address" style="font-style:normal;">
+<i aria-hidden="true" class="fas fa-map-marker-alt"></i>
+<span data-t="laddr">Al Thawra Al Khadra (Green Revolution), Sheikh Zayed City</span>
+</address>
+<p data-t="ld" style="color:var(--muted);line-height:1.9;margin-bottom:20px;">
           Zayed Lagoons is strategically located in Sheikh Zayed City — one of Egypt's most prestigious and rapidly growing residential destinations, with easy access to major highways, elite schools, hospitals, and shopping centres.
         </p>
-
-        <!-- Location highlights — 2-column grid -->
-        <ul class="loc-highlights" aria-label="Location highlights">
-          <li data-t="lh1">3 minutes from Smart Village</li>
-          <li data-t="lh2">Directly behind Cairo Gate Compound (Emaar)</li>
-          <li data-t="lh3">10 minutes from Sphinx International Airport</li>
-          <li data-t="lh4">10 minutes from Mall of Arabia</li>
-          <li data-t="lh5">15 minutes from Mall of Egypt</li>
-          <li data-t="lh6">20 minutes from the Grand Egyptian Museum</li>
-        </ul>
-
-        <!-- Nearby landmark tags -->
-        <div class="ltags" aria-label="Nearby landmarks">
-          <div class="ltag"><i class="fas fa-location-dot" aria-hidden="true"></i>Mall of Arabia</div>
-          <div class="ltag"><i class="fas fa-location-dot" aria-hidden="true"></i>Hyper One</div>
-          <div class="ltag"><i class="fas fa-location-dot" aria-hidden="true"></i>Mall of Egypt</div>
-          <div class="ltag"><i class="fas fa-location-dot" aria-hidden="true"></i>Zayed Sports City</div>
-          <div class="ltag"><i class="fas fa-location-dot" aria-hidden="true"></i>MSA University</div>
-          <div class="ltag"><i class="fas fa-location-dot" aria-hidden="true"></i>Cairo–Alex Desert Road</div>
-        </div>
-
-        <br>
-        <a href="https://maps.app.goo.gl/sWYgztund3TJKwWP8" target="_blank" rel="noopener noreferrer" class="bo"
-          style="display:inline-flex;margin-top:8px;" id="map-view-btn">
-          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          <span data-t="mb">View on Map</span>
-        </a>
-      </div>
-
-      <!-- Map column (right in LTR) -->
-      <div class="limg">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.4233076656683!2d31.016739318838432!3d30.061297334464644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14585b00008b87b3%3A0x8e34ddc29a339958!2z2YPZhdmI2YbYryDYstin2YrYryDZhNin2KzZiNmG2LI!5e1!3m2!1sen!2seg!4v1780689680196!5m2!1sen!2seg" 
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Zayed Lagoons Location Map">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<!-- Location highlights — 2-column grid -->
+<ul aria-label="Location highlights" class="loc-highlights">
+<li data-t="lh1">3 minutes from Smart Village</li>
+<li data-t="lh2">Directly behind Cairo Gate Compound (Emaar)</li>
+<li data-t="lh3">10 minutes from Sphinx International Airport</li>
+<li data-t="lh4">10 minutes from Mall of Arabia</li>
+<li data-t="lh5">15 minutes from Mall of Egypt</li>
+<li data-t="lh6">20 minutes from the Grand Egyptian Museum</li>
+</ul>
+<!-- Nearby landmark tags -->
+<div aria-label="Nearby landmarks" class="ltags">
+<div class="ltag"><i aria-hidden="true" class="fas fa-location-dot"></i>Mall of Arabia</div>
+<div class="ltag"><i aria-hidden="true" class="fas fa-location-dot"></i>Hyper One</div>
+<div class="ltag"><i aria-hidden="true" class="fas fa-location-dot"></i>Mall of Egypt</div>
+<div class="ltag"><i aria-hidden="true" class="fas fa-location-dot"></i>Zayed Sports City</div>
+<div class="ltag"><i aria-hidden="true" class="fas fa-location-dot"></i>MSA University</div>
+<div class="ltag"><i aria-hidden="true" class="fas fa-location-dot"></i>Cairo–Alex Desert Road</div>
+</div>
+<br/>
+<a class="bo" href="https://maps.app.goo.gl/sWYgztund3TJKwWP8" id="map-view-btn" rel="noopener noreferrer" style="display:inline-flex;margin-top:8px;" target="_blank">
+<i aria-hidden="true" class="fas fa-map-marker-alt"></i>
+<span data-t="mb">View on Map</span>
+</a>
+</div>
+<!-- Map column (right in LTR) -->
+<div class="limg">
+<iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.4233076656683!2d31.016739318838432!3d30.061297334464644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14585b00008b87b3%3A0x8e34ddc29a339958!2z2YPZhdmI2YbYryDYstin2YrYryDZhNin2KzZiNmG2LI!5e1!3m2!1sen!2seg!4v1780689680196!5m2!1sen!2seg" style="border:0;" title="Zayed Lagoons Location Map" width="100%">
+</iframe>
+</div>
+</div>
+</section>
+<!-- ============================================================
        INVESTMENT OPPORTUNITY
   ============================================================ -->
-  <section aria-labelledby="invest-heading">
-    <div style="text-align:center;">
-      <span class="stag" data-t="invt">Why Invest</span>
-      <h2 class="stitle" id="invest-heading" data-t="invti">Investment Opportunity</h2>
-      <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
-    </div>
-    <div class="ig reveal">
-      <article class="ic">
-        <h3 data-t="i1">Prime Location</h3>
-        <p data-t="i1d">Located in Sheikh Zayed — one of Egypt's most sought-after residential areas with consistently rising property values.</p>
-      </article>
-      <article class="ic">
-        <h3 data-t="i2">Unique Concept</h3>
-        <p data-t="i2d">The lagoon-themed design sets Zayed Lagoons apart as a truly distinctive residential destination in Egypt.</p>
-      </article>
-      <article class="ic">
-        <h3 data-t="i3">Premium Finishes</h3>
-        <p data-t="i3d">High-quality construction and finishes ensuring lasting value and superior living standards.</p>
-      </article>
-      <article class="ic">
-        <h3 data-t="i4">Flexible Payment</h3>
-        <p data-t="i4d">Attractive payment plans with competitive down payments and extended installment options.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section aria-labelledby="invest-heading">
+<div style="text-align:center;">
+<span class="stag" data-t="invt">Why Invest</span>
+<h2 class="stitle" data-t="invti" id="invest-heading">Investment Opportunity</h2>
+<div aria-hidden="true" class="ssep" style="margin:0 auto;"></div>
+</div>
+<div class="ig reveal">
+<article class="ic">
+<h3 data-t="i1">Prime Location</h3>
+<p data-t="i1d">Located in Sheikh Zayed — one of Egypt's most sought-after residential areas with consistently rising property values.</p>
+</article>
+<article class="ic">
+<h3 data-t="i2">Unique Concept</h3>
+<p data-t="i2d">The lagoon-themed design sets Zayed Lagoons apart as a truly distinctive residential destination in Egypt.</p>
+</article>
+<article class="ic">
+<h3 data-t="i3">Premium Finishes</h3>
+<p data-t="i3d">High-quality construction and finishes ensuring lasting value and superior living standards.</p>
+</article>
+<article class="ic">
+<h3 data-t="i4">Flexible Payment</h3>
+<p data-t="i4d">Attractive payment plans with competitive down payments and extended installment options.</p>
+</article>
+</div>
+</section>
+<!-- ============================================================
        PROJECT DEVELOPER / MARKETING
   ============================================================ -->
-  <section class="partner-sec" aria-labelledby="partners-heading">
-    <div style="text-align:center;">
-      <span class="stag" data-t="prt">Project Team</span>
-      <h2 class="stitle" id="partners-heading" data-t="prti">Project Developer &amp; Marketing</h2>
-      <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
-      <p style="color:var(--muted);max-width:580px;margin:0 auto 20px;" data-t="prd">Zayed Lagoons is developed by Roshdy Developments and marketed by NBIG.</p>
-    </div>
-    <div class="partner-grid reveal">
-      <!-- Roshdy Developments -->
-      <article class="partner-card">
-        <h3 data-t="pd1">Roshdy Developments</h3>
-        <span class="partner-sub" data-t="pd1s">Project Developer</span>
-        <p class="partner-desc" data-t="pd1d">One of the leading real estate development companies in Upper Egypt, with a distinguished project portfolio in Assiut Governorate, most notably:</p>
-        <ul class="partner-proj-list">
-          <li data-t="pd1p1">Venicia Compound &mdash; <span class="partner-badge">12 Feddans</span></li>
-          <li data-t="pd1p2">Vienna Compound &mdash; <span class="partner-badge">17 Feddans</span></li>
-          <li data-t="pd1p3">Al Rabwa Compound &mdash; <span class="partner-badge">33 Feddans</span></li>
-        </ul>
-      </article>
-      <!-- NBIG -->
-      <article class="partner-card">
-        <h3 data-t="pd2">NBIG</h3>
-        <span class="partner-sub" data-t="pd2s">Marketing</span>
-        <p class="partner-desc" data-t="pd2d">Contact NBIG for marketing inquiries about Zayed Lagoons.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section aria-labelledby="partners-heading" class="partner-sec">
+<div style="text-align:center;">
+<span class="stag" data-t="prt">Project Team</span>
+<h2 class="stitle" data-t="prti" id="partners-heading">Project Developer &amp; Marketing</h2>
+<div aria-hidden="true" class="ssep" style="margin:0 auto;"></div>
+<p data-t="prd" style="color:var(--muted);max-width:580px;margin:0 auto 20px;">Zayed Lagoons is developed by Roshdy Developments and marketed by NBIG.</p>
+</div>
+<div class="partner-grid reveal">
+<!-- Roshdy Developments -->
+<article class="partner-card">
+<h3 data-t="pd1">Roshdy Developments</h3>
+<span class="partner-sub" data-t="pd1s">Project Developer</span>
+<p class="partner-desc" data-t="pd1d">One of the leading real estate development companies in Upper Egypt, with a distinguished project portfolio in Assiut Governorate, most notably:</p>
+<ul class="partner-proj-list">
+<li data-t="pd1p1">Venicia Compound — <span class="partner-badge">12 Feddans</span></li>
+<li data-t="pd1p2">Vienna Compound — <span class="partner-badge">17 Feddans</span></li>
+<li data-t="pd1p3">Al Rabwa Compound — <span class="partner-badge">33 Feddans</span></li>
+</ul>
+</article>
+<!-- NBIG -->
+<article class="partner-card">
+<h3 data-t="pd2">NBIG</h3>
+<span class="partner-sub" data-t="pd2s">Marketing</span>
+<p class="partner-desc" data-t="pd2d">Contact NBIG for marketing inquiries about Zayed Lagoons.</p>
+</article>
+</div>
+</section>
+<!-- ============================================================
        I LIVING APP SECTION
   ============================================================ -->
-  <section class="app-section">
-    <div class="app-grid reveal">
-      <div class="app-info">
-        <span class="stag" data-t="apt">Smart Living</span>
-        <h2 class="stitle" data-t="apti">i Living Community App</h2>
-        <div class="ssep"></div>
-        <p style="color:var(--muted); line-height:1.9; margin-bottom:20px;" data-t="apd">We prioritize your convenience and lifestyle. With the i Living application, residents can effortlessly manage their homes, community access, and essential services from one smart dashboard.</p>
-        <div class="app-features">
-          <div class="app-feature-item">
-            <div class="app-feature-icon"><i class="fas fa-key"></i></div>
-            <div class="app-feature-text">
-              <h3 data-t="apf1">Access Control</h3>
-              <p data-t="apf1d">Control visitor entries and security gates directly from your smartphone.</p>
-            </div>
-          </div>
-          <div class="app-feature-item">
-            <div class="app-feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-            <div class="app-feature-text">
-              <h3 data-t="apf2">Bill Payments</h3>
-              <p data-t="apf2d">Pay your maintenance fees, services, and utilities securely inside the app.</p>
-            </div>
-          </div>
-          <div class="app-feature-item">
-            <div class="app-feature-icon"><i class="fas fa-screwdriver-wrench"></i></div>
-            <div class="app-feature-text">
-              <h3 data-t="apf3">Maintenance Requests</h3>
-              <p data-t="apf3d">Submit home maintenance requests and track the progress of your tickets instantly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="app-img">
-        <img src="images/iliving%20icon.jpg" alt="i Living App" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section class="app-section">
+<div class="app-grid reveal">
+<div class="app-info">
+<span class="stag" data-t="apt">Smart Living</span>
+<h2 class="stitle" data-t="apti">i Living Community App</h2>
+<div class="ssep"></div>
+<p data-t="apd" style="color:var(--muted); line-height:1.9; margin-bottom:20px;">We prioritize your convenience and lifestyle. With the i Living application, residents can effortlessly manage their homes, community access, and essential services from one smart dashboard.</p>
+<div class="app-features">
+<div class="app-feature-item">
+<div class="app-feature-icon"><i class="fas fa-key"></i></div>
+<div class="app-feature-text">
+<h3 data-t="apf1">Access Control</h3>
+<p data-t="apf1d">Control visitor entries and security gates directly from your smartphone.</p>
+</div>
+</div>
+<div class="app-feature-item">
+<div class="app-feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+<div class="app-feature-text">
+<h3 data-t="apf2">Bill Payments</h3>
+<p data-t="apf2d">Pay your maintenance fees, services, and utilities securely inside the app.</p>
+</div>
+</div>
+<div class="app-feature-item">
+<div class="app-feature-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+<div class="app-feature-text">
+<h3 data-t="apf3">Maintenance Requests</h3>
+<p data-t="apf3d">Submit home maintenance requests and track the progress of your tickets instantly.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="app-img">
+<img alt="i Living App" loading="lazy" src="images/iliving%20icon.jpg"/>
+</div>
+</div>
+</section>
+<!-- ============================================================
        PROJECT BROCHURE
   ============================================================ -->
-  <section class="fsec" aria-labelledby="brochure-heading">
-    <div class="pw reveal">
-      <span class="stag" data-t="pdft">Documentation</span>
-      <h2 class="stitle" id="brochure-heading" data-t="pdfti">Project Brochure</h2>
-      <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
-      <p style="color:var(--muted);" data-t="pdfd">Download the full Zayed Lagoons project profile in PDF format.</p>
-      <a href="pdf/Profile Zayed lagoons.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Zayed Lagoons brochure PDF">
-        <div class="pt">
-          <img src="images/sky-hills-pdf-thumbnail.webp" alt="Zayed Lagoons Project Brochure Preview" loading="lazy">
-        </div>
-      </a>
-      <div style="margin-top:24px;">
-        <a href="pdf/Profile Zayed lagoons.pdf" target="_blank" rel="noopener noreferrer" class="bg" id="pdf-view-btn">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <span data-t="pdfv">View PDF</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section aria-labelledby="brochure-heading" class="fsec">
+<div class="pw reveal">
+<span class="stag" data-t="pdft">Documentation</span>
+<h2 class="stitle" data-t="pdfti" id="brochure-heading">Project Brochure</h2>
+<div aria-hidden="true" class="ssep" style="margin:0 auto;"></div>
+<p data-t="pdfd" style="color:var(--muted);">Download the full Zayed Lagoons project profile in PDF format.</p>
+<a aria-label="View Zayed Lagoons brochure PDF" href="pdf/Profile Zayed lagoons.pdf" rel="noopener noreferrer" target="_blank">
+<div class="pt">
+<img alt="Zayed Lagoons Project Brochure Preview" loading="lazy" src="images/sky-hills-pdf-thumbnail.webp"/>
+</div>
+</a>
+<div style="margin-top:24px;">
+<a class="bg" href="pdf/Profile Zayed lagoons.pdf" id="pdf-view-btn" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fas fa-file-pdf"></i>
+<span data-t="pdfv">View PDF</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================================================
        CONTACT FORM
   ============================================================ -->
-  <section id="contact" class="csection" aria-labelledby="contact-heading">
-    <div class="cbox">
-      <div style="text-align:center;margin-bottom:20px;">
-        <span class="stag" data-t="ctag">Inquiry Form</span>
-        <h2 class="stitle" id="contact-heading" data-t="ctitle">Book Your Unit Now</h2>
-        <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
-      </div>
-      <form data-contact-form id="zayedLagoonsContactForm" action="send_email.php" method="POST">
-        <input type="hidden" name="project" value="Zayed Lagoons">
-        <div class="cform-grid">
-          <div class="finp-group">
-            <label class="flab" for="inp-name" data-t="lname">Full Name</label>
-            <input class="finp" id="inp-name" type="text" name="name" data-p="pname" placeholder="Enter your full name" required autocomplete="name">
-          </div>
-          <div class="finp-group">
-            <label class="flab" for="inp-phone" data-t="lphone">Phone Number</label>
-            <input class="finp" id="inp-phone" type="tel" name="phone" data-p="pphone" placeholder="Enter your phone number" required autocomplete="tel">
-          </div>
-          <div class="finp-group">
-            <label class="flab" for="inp-email" data-t="lemail">Email Address</label>
-            <input class="finp" id="inp-email" type="email" name="email" data-p="pemail" placeholder="Enter your email address" autocomplete="email">
-          </div>
-          <div class="finp-group">
-            <label class="flab" for="inp-subject" data-t="lsubject">Subject</label>
-            <input class="finp" id="inp-subject" type="text" name="subject" data-p="psubject" placeholder="Zayed Lagoons Unit Inquiry">
-          </div>
-          <div class="finp-group full">
-            <label class="flab" for="inp-message" data-t="lmsg">Message</label>
-            <textarea class="finp" id="inp-message" name="message" rows="4" data-p="pmsg" placeholder="Tell us more about your requirements" style="height:120px;resize:vertical;"></textarea>
-          </div>
-          <div class="finp-group full" style="display:flex;justify-content:center;">
-            <div class="g-recaptcha" data-sitekey="6LdxHDMrAAAAAF6N6S_dqP-kI6A9Ib0L_f4oeWnO"></div>
-          </div>
-        </div>
-        <button type="submit" class="fbtn" id="zayedLagoonsSubmitBtn">
-          <span data-t="fbtn">Send Message</span>
-          <i class="fas fa-paper-plane" aria-hidden="true"></i>
-        </button>
-        <div class="fmsg" id="zayedLagoonsFormMsg" role="status" aria-live="polite" role="alert" aria-live="polite"></div>
-      </form>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<section aria-labelledby="contact-heading" class="csection" id="contact">
+<div class="cbox">
+<div style="text-align:center;margin-bottom:20px;">
+<span class="stag" data-t="ctag">Inquiry Form</span>
+<h2 class="stitle" data-t="ctitle" id="contact-heading">Book Your Unit Now</h2>
+<div aria-hidden="true" class="ssep" style="margin:0 auto;"></div>
+</div>
+<form action="send_email.php" data-contact-form="" id="zayedLagoonsContactForm" method="POST">
+<input name="project" type="hidden" value="Zayed Lagoons"/>
+<div class="cform-grid">
+<div class="finp-group">
+<label class="flab" data-t="lname" for="inp-name">Full Name</label>
+<input autocomplete="name" class="finp" data-p="pname" id="inp-name" name="name" placeholder="Enter your full name" required="" type="text"/>
+</div>
+<div class="finp-group">
+<label class="flab" data-t="lphone" for="inp-phone">Phone Number</label>
+<input autocomplete="tel" class="finp" data-p="pphone" id="inp-phone" name="phone" placeholder="Enter your phone number" required="" type="tel"/>
+</div>
+<div class="finp-group">
+<label class="flab" data-t="lemail" for="inp-email">Email Address</label>
+<input autocomplete="email" class="finp" data-p="pemail" id="inp-email" name="email" placeholder="Enter your email address" type="email"/>
+</div>
+<div class="finp-group">
+<label class="flab" data-t="lsubject" for="inp-subject">Subject</label>
+<input class="finp" data-p="psubject" id="inp-subject" name="subject" placeholder="Zayed Lagoons Unit Inquiry" type="text"/>
+</div>
+<div class="finp-group full">
+<label class="flab" data-t="lmsg" for="inp-message">Message</label>
+<textarea class="finp" data-p="pmsg" id="inp-message" name="message" placeholder="Tell us more about your requirements" rows="4" style="height:120px;resize:vertical;"></textarea>
+</div>
+<div class="finp-group full" style="display:flex;justify-content:center;">
+<div class="g-recaptcha" data-sitekey="6LdxHDMrAAAAAF6N6S_dqP-kI6A9Ib0L_f4oeWnO"></div>
+</div>
+</div>
+<button class="fbtn" id="zayedLagoonsSubmitBtn" type="submit">
+<span data-t="fbtn">Send Message</span>
+<i aria-hidden="true" class="fas fa-paper-plane"></i>
+</button>
+<div aria-live="polite" class="fmsg" id="zayedLagoonsFormMsg" role="status"></div>
+</form>
+</div>
+</section>
+<!-- ============================================================
        CTA STRIP
   ============================================================ -->
-  <section class="ctas reveal" aria-labelledby="cta-heading">
-    <h2 id="cta-heading" data-t="ct">Your Dream Home Awaits at Zayed Lagoons</h2>
-    <p data-t="cd">Contact us today to secure your unit at Zayed Lagoons. Flexible payment plans with attractive down payments and extended installment options.</p>
-    <div class="cbs">
-      <a href="tel:19938" class="bg" id="cta-call-btn">
-        <i class="fas fa-phone" aria-hidden="true"></i>
-        <span data-t="cb1">Hotline 19938</span>
+<section aria-labelledby="cta-heading" class="ctas reveal">
+<h2 data-t="ct" id="cta-heading">Your Dream Home Awaits at Zayed Lagoons</h2>
+<p data-t="cd">Contact us today to secure your unit at Zayed Lagoons. Flexible payment plans with attractive down payments and extended installment options.</p>
+<div class="cbs">
+<a class="bg" href="tel:19938" id="cta-call-btn">
+<i aria-hidden="true" class="fas fa-phone"></i>
+<span data-t="cb1">Hotline 19938</span>
+</a>
+<a class="bo" href="https://wa.me/201112221121" id="cta-wa-btn" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a href="https://wa.me/201112221121" target="_blank" rel="noopener noreferrer" class="bo" id="cta-wa-btn">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-      </a>
-      <a href="#contact" class="bo" id="cta-contact-btn">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-        <span data-t="cb3">Contact Us</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ============================================================
+<a class="bo" href="#contact" id="cta-contact-btn">
+<i aria-hidden="true" class="fas fa-envelope"></i>
+<span data-t="cb3">Contact Us</span>
+</a>
+</div>
+</section>
+<!-- ============================================================
        FOOTER
   ============================================================ -->
-  <footer role="contentinfo" style="margin-bottom:56px;">
-    <div>&copy; 2025 NBIG. <span data-t="rg">All rights reserved.</span></div>
-    <a href="index.html" data-t="bh">← Back to Home</a>
-  </footer>
-
-  <!-- ============================================================
+<section class="next-project"><span data-t="nextProject">NEXT PROJECT</span><a href="lamar-residence.html">Lamar Residence <span>↗</span></a></section><footer role="contentinfo" style="margin-bottom:56px;">
+<div>© 2025 NBIG. <span data-t="rg">All rights reserved.</span></div>
+<a data-t="bh" href="index.html">← Back to Home</a>
+</footer>
+<!-- ============================================================
        SCRIPTS
   ============================================================ -->
-  <script>
+<script>
     /* ── Loader ───────────────────────────────────────────────── */
     const hideLoader = () => {
       const l = document.getElementById('loader');
@@ -1306,7 +1269,7 @@
       slides[currentSlide].classList.add('active');
       dotsWrapper.children[currentSlide].classList.add('active');
     }
-    const slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+    const slideInterval = setInterval(() => {if(document.body.dataset.motion!=='paused')goToSlide((currentSlide + 1) % slides.length)}, 5000);
 
     /* ── Intersection Observer (reveal) ──────────────────────── */
     const revealObserver = new IntersectionObserver((entries) => {
@@ -1466,7 +1429,9 @@
     };
 
     /* ── setLang ─────────────────────────────────────────────── */
-    function setLang(l) {
+    Object.assign(T.en,{"newEyebrow": "SPACES SEEN. LIVES IMAGINED.", "newHeadline": "A sense of <em>place.</em>", "newIntro": "From a detail in the facade to the whole picture. Explore NBIG from a closer perspective.", "inFocus": "IN FOCUS", "exploreProject": "Explore the project", "anotherView": "NBIG / ANOTHER VIEW", "stageNote": "The facade. The open space. A closer view of every project.", "visualNote": "ARCHITECTURAL VISUALS FROM PROJECT FILES", "perspectiveLabel": "01 / PERSPECTIVE", "perspectiveTitle": "Architecture is<br><em>more than a view.</em>", "perspectiveIntro": "Come closer and the picture changes. Read the lines, see the spaces, and imagine life between them.", "everyAngle": "Every angle,<br>a story.", "nextProject": "NEXT PROJECT"});
+Object.assign(T.ar,{"newEyebrow": "مساحات تُرى. حياة تُتخيّل.", "newHeadline": "نبني للمكان <em>معنى.</em>", "newIntro": "من تفصيلة في الواجهة، إلى المشهد كله. اكتشف مشاريع NBIG من منظور أقرب.", "inFocus": "المشروع في الواجهة", "exploreProject": "استكشف المشروع", "anotherView": "NBIG / نظرة أخرى", "stageNote": "الواجهة والمساحة المفتوحة. نظرة أقرب لكل مشروع.", "visualNote": "تصوّرات معمارية من ملفات المشاريع", "perspectiveLabel": "٠١ / المنظور", "perspectiveTitle": "العمارة ليست<br><em>صورة واحدة.</em>", "perspectiveIntro": "تتغيّر الصورة حين نقترب. نقرأ الخطوط، ونرى المساحات، ونتخيّل الحياة بينها.", "everyAngle": "كل زاوية،<br>حكاية.", "nextProject": "المشروع التالي"});
+function setLang(l) {
       document.documentElement.lang = l;
       document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
 
@@ -1527,25 +1492,22 @@ NBIGGallery.init({
   })
 });
 </script>
-
-
-  <!-- ============================================================
+<!-- ============================================================
        FLOATING BOTTOM BAR
   ============================================================ -->
-  <div class="float-bar" id="floatBar" role="navigation" aria-label="Quick contact">
-    <a href="tel:19938" class="fb-hotline" id="fb-hotline-btn">
-      <i class="fas fa-phone" aria-hidden="true"></i>
-      <span>Hotline 19938</span>
-    </a>
-    <a href="tel:+201112221121" class="fb-call" id="fb-call-btn">
-      <i class="fas fa-phone" aria-hidden="true"></i>
-      <span>01112221121</span>
-    </a>
-    <a href="https://wa.me/201112221121" target="_blank" rel="noopener noreferrer" class="fb-wa" id="fb-wa-btn">
-      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-      <span>WhatsApp</span>
-    </a>
-  </div>
-
-</body>
+<div aria-label="Quick contact" class="float-bar" id="floatBar" role="navigation">
+<a class="fb-hotline" href="tel:19938" id="fb-hotline-btn">
+<i aria-hidden="true" class="fas fa-phone"></i>
+<span>Hotline 19938</span>
+</a>
+<a class="fb-call" href="tel:+201112221121" id="fb-call-btn">
+<i aria-hidden="true" class="fas fa-phone"></i>
+<span>01112221121</span>
+</a>
+<a class="fb-wa" href="https://wa.me/201112221121" id="fb-wa-btn" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fab fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+</div>
+<script defer="" src="js/complete.js"></script></body>
   </html>
