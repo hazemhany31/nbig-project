@@ -1,0 +1,66 @@
+[
+  [
+    "sky-hills",
+    "Sky Hills",
+    "سكاي هيلز",
+    "Residential",
+    "images/sky-hills/facade.jpg",
+    "images/sky-hills/courtyard-gardens.jpg"
+  ],
+  [
+    "zayed-hills",
+    "Zayed Hills",
+    "زايد هيلز",
+    "Residential",
+    "images/zayedd.jpg",
+    "images/zayed-2.webp"
+  ],
+  [
+    "zayed-lagoons",
+    "Zayed Lagoons",
+    "زايد لاجونز",
+    "Residential",
+    "images/zx-07.webp",
+    "images/zx-02.webp"
+  ],
+  [
+    "lamar-residence",
+    "Lamar Residence",
+    "لامار ريزيدنس",
+    "Residential",
+    "images/lamarrrr.webp",
+    "images/lamar-2.webp"
+  ],
+  [
+    "cmc",
+    "CMC",
+    "سي إم سي",
+    "Medical",
+    "images/cmc-1-1.webp",
+    "images/cmc-1.webp"
+  ],
+  [
+    "cmc-2",
+    "CMC 2",
+    "سي إم سي ٢",
+    "Medical",
+    "images/cmc-2.webp",
+    "images/cmc-2-1.webp"
+  ],
+  [
+    "new-cmc",
+    "New CMC",
+    "نيو سي إم سي",
+    "Medical",
+    "images/cmc-3.webp",
+    "images/cmc-3-2.webp"
+  ],
+  [
+    "prime",
+    "Prime Med",
+    "برايم ميد",
+    "Medical",
+    "images/OFFICE1.webp",
+    "images/cmcc.webp"
+  ]
+]
