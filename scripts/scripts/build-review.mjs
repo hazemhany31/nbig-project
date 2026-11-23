@@ -1,0 +1,9 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const out='review-dist';fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out);
+for(const dir of ['css','js','images','data','pdf','pdfs'])if(fs.existsSync(dir))fs.cpSync(dir,path.join(out,dir),{recursive:true});
+for(const f of fs.readdirSync('.').filter(x=>x.endsWith('.html'))){let s=fs.readFileSync(f,'utf8');s=s.replace('</head>','<meta name="robots" content="noindex,nofollow"/><script src="/js/standalone-review.js"></script></head>');fs.writeFileSync(path.join(out,f),s)}
+fs.writeFileSync(path.join(out,'js/standalone-review.js'),"/* Standalone review: no messages are sent. */\ndocument.addEventListener('submit',function(e){if(!(e.target instanceof HTMLFormElement))return;e.preventDefault();e.stopImmediatePropagation();let n=e.target.querySelector('[data-review-message]');if(!n){n=document.createElement('p');n.dataset.reviewMessage='true';n.setAttribute('role','status');n.style.cssText='padding:16px;border:1px solid currentColor;margin-top:16px';e.target.append(n)}n.textContent=document.documentElement.lang==='ar'?'\u0646\u0633\u062e\u0629 \u0644\u0644\u0645\u0631\u0627\u062c\u0639\u0629 \u0641\u0642\u0637. \u0625\u0631\u0633\u0627\u0644 \u0637\u0644\u0628\u0627\u062a \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u063a\u064a\u0631 \u0645\u0641\u0639\u0651\u0644\u060c \u0648\u0644\u0645 \u062a\u064f\u0631\u0633\u0644 \u0628\u064a\u0627\u0646\u0627\u062a\u0643.':'Review copy only. Contact submission is inactive. Your details were not sent.';},true);\n");
+fs.writeFileSync(path.join(out,'robots.txt'),'User-agent: *\nDisallow: /\n');
+function clean(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())clean(p);else if(/\.(php|sh|md|env)$/i.test(e.name))fs.rmSync(p)}}clean(out);
+console.log('Standalone review exported. Contact submission is inactive.');
