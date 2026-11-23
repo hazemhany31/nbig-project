@@ -87,3 +87,33 @@
     });
   });
 })();
+/* Lightweight dimensional scene, no external engine or downloaded model. */
+(() => {
+  'use strict';
+  if (!document.body.classList.contains('homepage')) return;
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  const scene = document.createElement('div');
+  scene.className = 'nbig-scene';
+  scene.setAttribute('aria-label', 'Interactive abstract 3D architecture');
+  const buildings = [
+    { x: '-105px', y: '48px', z: '-25px', scale: '.72' },
+    { x: '0px', y: '0px', z: '30px', scale: '1' },
+    { x: '80px', y: '64px', z: '-45px', scale: '.64' }
+  ];
+  scene.innerHTML = '<div class="nbig-scene-title"><strong>Build beyond the ordinary.</strong><span>NBIG / Architecture in motion</span></div><div class="nbig-city"><div class="nbig-ground"></div>' + buildings.map(b => '<div class="nbig-building" style="--x:'+b.x+';--y:'+b.y+';--z:'+b.z+';scale:'+b.scale+'">'+['front','back','right','left','roof'].map(f=>'<div class="nbig-face nbig-'+f+'"></div>').join('')+'</div>').join('') + '</div><img class="nbig-photo-card" src="images/sky-hills/facade.jpg" alt="Sky Hills facade"><p class="nbig-scene-note">Abstract 3D study, not a project model. Drag to rotate.</p><div class="nbig-scene-controls"><button type="button" data-scene="left" aria-label="Rotate architecture left">↶ Rotate</button><button type="button" data-scene="pause">Pause motion</button><button type="button" data-scene="right" aria-label="Rotate architecture right">Rotate ↷</button></div><div class="nbig-motion-line"></div>';
+  hero.insertBefore(scene, hero.querySelector('.hbg'));
+  const city=scene.querySelector('.nbig-city');
+  let angle=-48, paused=false, start=null, moved=false;
+  function rotate(delta){ angle=Math.max(-150,Math.min(60,angle+delta)); paused=true; scene.dataset.paused='true'; city.style.animation='none'; city.style.transform='rotateX(-15deg) rotateY('+angle+'deg)'; update(); }
+  function update(){ const ar=document.documentElement.lang==='ar'; scene.querySelector('[data-scene=left]').textContent=ar?'↶ تدوير':'↶ Rotate';scene.querySelector('[data-scene=right]').textContent=ar?'تدوير ↷':'Rotate ↷'; scene.querySelector('[data-scene="pause"]').textContent=paused?(ar?'تشغيل الحركة':'Play motion'):(ar?'إيقاف الحركة':'Pause motion');scene.querySelector('[data-scene="pause"]').setAttribute('aria-pressed',String(paused));scene.querySelector('.nbig-scene-title strong').textContent=ar?'ابنِ خارج المألوف.':'Build beyond the ordinary.';scene.querySelector('.nbig-scene-title span').textContent=ar?'NBIG / عمارة تتحرك':'NBIG / Architecture in motion';scene.querySelector('.nbig-scene-note').textContent=ar?'تكوين ثلاثي الأبعاد للتوضيح، وليس نموذجًا لمشروع. اسحب للتدوير.':'Abstract 3D study, not a project model. Drag to rotate.'; }
+  scene.querySelector('[data-scene="left"]').onclick=()=>rotate(-25);
+  scene.querySelector('[data-scene="right"]').onclick=()=>rotate(25);
+  scene.querySelector('[data-scene="pause"]').onclick=()=>{paused=!paused;scene.dataset.paused=String(paused);city.style.animation=paused?'none':'';if(!paused)city.style.transform='';update();};
+  scene.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;start=e.clientX;moved=false;});
+  scene.addEventListener('pointermove',e=>{if(start===null||e.buttons===0)return;const delta=e.clientX-start;if(Math.abs(delta)>4)moved=true;if(moved){rotate(delta*.5);start=e.clientX;}});
+  scene.addEventListener('pointerup',()=>{start=null;});scene.addEventListener('pointerleave',()=>{start=null;});
+  new MutationObserver(update).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){paused=true;scene.dataset.paused='true';}
+  update();
+})();
