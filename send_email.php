@@ -7,10 +7,38 @@ require __DIR__ . '/src/PHPMailer.php';
 require __DIR__ . '/src/SMTP.php';
 require __DIR__ . '/src/Exception.php';
 
-// تحميل إعدادات البريد من email_config.php
-$emailConfig = require __DIR__ . '/email_config.php';
-
 header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-store');
+ini_set('display_errors', '0');
+
+function respond($status, $message) {
+  http_response_code($status);
+  echo json_encode(['success' => false, 'message' => $message], JSON_UNESCAPED_UNICODE);
+  exit;
+}
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+  header('Allow: POST');
+  respond(405, 'Method not allowed.');
+}
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 32768) respond(413, 'Request too large.');
+foreach (['website', 'project', 'name', 'email', 'phone', 'number', 'message', 'g-recaptcha-response'] as $field) {
+  if (isset($_POST[$field]) && !is_string($_POST[$field])) respond(400, 'Invalid form data.');
+}
+// Credentials remain on the hosting server, never in version control.
+$configPath = __DIR__ . '/email_config.php';
+if (!is_file($configPath)) respond(503, 'نموذج التواصل غير متاح حالياً. يرجى الاتصال بنا.');
+$emailConfig = require $configPath;
+if (!is_array($emailConfig)) respond(503, 'Contact form unavailable.');
+$recaptchaSecret = getenv('RECAPTCHA_SECRET_KEY') ?: ($emailConfig['recaptcha']['secret'] ?? '');
+if ( !is_string($recaptchaSecret) || !$recaptchaSecret || $recaptchaSecret === 'YOUR_RECAPTCHA_SECRET_KEY') {
+  respond(503, 'نموذج التواصل غير متاح حالياً. يرجى الاتصال بنا.');
+}
+
+foreach (['smtp' => ['host', 'port', 'username', 'password', 'auth', 'encryption'], 'email' => ['from_email', 'from_name', 'to_email', 'to_name'], 'settings' => ['charset', 'verify_peer', 'verify_peer_name', 'allow_self_signed']] as $section => $keys) {
+  foreach ($keys as $key) {
+    if (!isset($emailConfig[$section][$key])) respond(503, 'Contact form unavailable. Please call us.');
+  }
+}
 
 // ─── HONEYPOT CHECK ──────────────────────────────────────────────────────────
 if (!empty($_POST['website'])) {
@@ -23,46 +51,53 @@ $rateFile = sys_get_temp_dir() . '/nbig_rate_' . md5($_SERVER['REMOTE_ADDR'] ?? 
 $rateLimit = 5;
 $rateWindow = 600;
 $now = time();
-$requests = [];
-if (file_exists($rateFile)) {
-  $data = json_decode(file_get_contents($rateFile), true);
-  if (is_array($data)) {
-    $requests = array_filter($data, fn($t) => ($now - $t) < $rateWindow);
-  }
-}
+$rateHandle = @fopen($rateFile, 'c+');
+if (!$rateHandle || !flock($rateHandle, LOCK_EX)) respond(503, 'نموذج التواصل غير متاح حالياً.');
+$data = json_decode(stream_get_contents($rateHandle), true);
+$requests = is_array($data) ? array_values(array_filter($data, fn($t) => is_int($t) && ($now - $t) < $rateWindow)) : [];
 if (count($requests) >= $rateLimit) {
-  echo json_encode(['success' => false, 'message' => 'Too many requests. Please wait a few minutes.']);
-  exit;
+  flock($rateHandle, LOCK_UN); fclose($rateHandle);
+  header('Retry-After: 600');
+  respond(429, 'طلبات كثيرة. يرجى الانتظار بضع دقائق.');
 }
 $requests[] = $now;
-file_put_contents($rateFile, json_encode(array_values($requests)));
+rewind($rateHandle); ftruncate($rateHandle, 0);
+fwrite($rateHandle, json_encode($requests)); fflush($rateHandle);
+flock($rateHandle, LOCK_UN); fclose($rateHandle);
 
 // ─── reCAPTCHA SERVER-SIDE VERIFICATION ──────────────────────────────────────
-$recaptchaSecret = '6Lfja30sAAAAAXro6ekMOHAcl8PJjOlbBAxvlJv';
 $recaptchaToken = trim($_POST['g-recaptcha-response'] ?? '');
-if (empty($recaptchaToken)) {
-  echo json_encode(['success' => false, 'message' => 'يرجى إكمال التحقق من reCAPTCHA.']);
-  exit;
-}
-$verifyResponse = @file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($recaptchaSecret) . '&response=' . urlencode($recaptchaToken) . '&remoteip=' . urlencode($_SERVER['REMOTE_ADDR'] ?? ''));
-if ($verifyResponse === false) {
-  $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
-  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => http_build_query(['secret' => $recaptchaSecret, 'response' => $recaptchaToken, 'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '']), CURLOPT_RETURNTRANSFER => true, CURLOPT_SSL_VERIFYPEER => false, CURLOPT_TIMEOUT => 10]);
-  $verifyResponse = curl_exec($ch);
-  curl_close($ch);
-}
+if (!$recaptchaToken) respond(400, 'يرجى إكمال التحقق من reCAPTCHA.');
+if (!function_exists('curl_init')) respond(503, 'نموذج التواصل غير متاح حالياً. يرجى الاتصال بنا.');
+$ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+curl_setopt_array($ch, [
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => http_build_query(['secret' => $recaptchaSecret, 'response' => $recaptchaToken, 'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '']),
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_SSL_VERIFYPEER => true,
+  CURLOPT_SSL_VERIFYHOST => 2,
+  CURLOPT_CONNECTTIMEOUT => 5,
+  CURLOPT_TIMEOUT => 10,
+]);
+$verifyResponse = curl_exec($ch);
+$verifyStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+if ($verifyResponse === false || $verifyStatus !== 200) respond(503, 'تعذر التحقق الآن. حاول مرة أخرى لاحقاً.');
 $captchaResult = json_decode($verifyResponse, true);
-if (!isset($captchaResult['success']) || $captchaResult['success'] !== true) {
-  echo json_encode(['success' => false, 'message' => 'فشل التحقق من reCAPTCHA.']);
-  exit;
-}
+if (($captchaResult['success'] ?? false) !== true) respond(400, 'فشل التحقق من reCAPTCHA.');
+$allowedHosts = $emailConfig['recaptcha']['allowed_hosts'] ?? ['new-build-egypt.com', 'www.new-build-egypt.com'];
+if (!is_array($allowedHosts)) respond(503, 'Contact form unavailable.');
+if (!in_array($captchaResult['hostname'] ?? '', $allowedHosts, true)) respond(400, 'فشل التحقق من مصدر الطلب.');
 
 // استقبال البيانات من POST
-$project = trim($_POST['project'] ?? 'Prime Med');
+$project = trim($_POST['project'] ?? 'NBIG Developments');
 $name = trim($_POST['name'] ?? '');
 $email = trim($_POST['email'] ?? '');
 $number = trim($_POST['phone'] ?? $_POST['number'] ?? '');
 $message = trim($_POST['message'] ?? '');
+
+if (strlen($name) > 200 || strlen($email) > 254 || strlen($number) > 40 || strlen($project) > 120 || strlen($message) > 10000) respond(400, 'يرجى تقليل طول البيانات المدخلة.');
+if (preg_match('/[\r\n]/', $project . $name . $email)) respond(400, 'Invalid form data.');
 
 if (!$name || !$email || !$number) {
   echo json_encode(['success' => false, 'message' => 'يرجى إدخال جميع البيانات المطلوبة.']);
@@ -87,6 +122,7 @@ try {
   $mail->SMTPSecure = $emailConfig['smtp']['encryption'] === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = $emailConfig['smtp']['port'];
   $mail->CharSet = $emailConfig['settings']['charset'];
+  $mail->Timeout = 15;
 
   // === !! سطر مهم جدا: اقفل الـ Debug بعد ما تخلص !! ===
   $mail->SMTPDebug = 0; // خليه 0 بدل 2 بعد ما تتأكد إن كله تمام
@@ -146,6 +182,7 @@ try {
   // ===============================================
   // 2. إعدادات الإيميل الثاني (رسالة التأكيد للعميل)
   // ===============================================
+  try {
   $userMail = new PHPMailer(true);
   $userMail->isSMTP();
   $userMail->Host = $emailConfig['smtp']['host'];
@@ -155,6 +192,7 @@ try {
   $userMail->SMTPSecure = $emailConfig['smtp']['encryption'] === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
   $userMail->Port = $emailConfig['smtp']['port'];
   $userMail->CharSet = $emailConfig['settings']['charset'];
+  $userMail->Timeout = 15;
   $userMail->SMTPDebug = 0; // خلي ده مقفول دايماً
 
   // *** هذا هو السطر الذي تم إصلاحه ***
@@ -195,12 +233,16 @@ try {
     ';
 
   $userMail->send();
+  } catch (Exception $confirmationError) {
+    error_log('NBIG: customer acknowledgement failed after lead was accepted.');
+  }
 
   // لو كل حاجة نجحت، ارجع برسالة نجاح
   echo json_encode(['success' => true, 'message' => '✅ تم إرسال الرسالة بنجاح!']);
 
 } catch (Exception $e) {
   // لو حصل أي خطأ في أي من الإيميلين، ارجع برسالة خطأ
-  echo json_encode(['success' => false, 'message' => 'تعذر الإرسال: ' . $e->getMessage()]);
+  error_log('NBIG: contact mail delivery failed.');
+  respond(502, 'تعذر إرسال الرسالة. يرجى الاتصال بنا أو المحاولة لاحقاً.');
 }
 ?>

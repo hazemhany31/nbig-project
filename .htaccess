@@ -165,3 +165,12 @@ Options -Indexes
         Require all denied
     </LimitExcept>
 </Files>
+
+# Do not expose diagnostics, source helpers, or server-side credentials.
+<FilesMatch "^(email_config(\.example)?\.php|test_smtp\.php|testmail\.php|test_access\.js|bulk_.*\.sh)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(\.env.*|.*\.(log|bak|sql))$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/\.git
