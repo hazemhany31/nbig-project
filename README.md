@@ -16,8 +16,10 @@ Open `http://localhost:8000`. Static hosting, including GitHub Pages, cannot run
 
 - `index.html`: homepage and filterable property portfolio
 - Project HTML pages: existing project content, floor plans and galleries
-- `css/editorial.css`: shared off-white / forest-green visual system
+- `css/editorial.css`: shared off-white / cyan architectural visual system
 - `js/site-quality.js`: shared navigation, portfolio filtering and contact handling
+- `js/complete.js`: eight-project stage, motion controls and keyboard image galleries
+- `data/project-index.json`: preserved project route index
 - `js/gallery.js`: project image/video lightboxes
 - `email_config.example.php`: server-only configuration template
 - `CPANEL_SETUP.md`: hosting and contact configuration
