@@ -14,6 +14,7 @@ mb_internal_encoding("UTF-8");
 $allowed_files = [
     'index.html',
     'sky-hills.html',
+    'zayed-lagoons.html',
     'zayed-hills.html',
     'lamar-residence.html',
     'cmc.html',
