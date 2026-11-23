@@ -724,6 +724,8 @@
       .project-credits { margin-bottom: 24px; }
     }
   </style>
+  <link rel="stylesheet" href="css/editorial.css">
+  <script src="js/site-quality.js" defer></script>
 </head>
 
 <body>
@@ -1173,7 +1175,7 @@
         <h2 class="stitle" id="contact-heading" data-t="ctitle">Book Your Unit Now</h2>
         <div class="ssep" style="margin:0 auto;" aria-hidden="true"></div>
       </div>
-      <form id="zayedLagoonsContactForm" action="send_email.php" method="POST" novalidate>
+      <form data-contact-form id="zayedLagoonsContactForm" action="send_email.php" method="POST">
         <input type="hidden" name="project" value="Zayed Lagoons">
         <div class="cform-grid">
           <div class="finp-group">
@@ -1204,7 +1206,7 @@
           <span data-t="fbtn">Send Message</span>
           <i class="fas fa-paper-plane" aria-hidden="true"></i>
         </button>
-        <div class="fmsg" id="zayedLagoonsFormMsg" role="alert" aria-live="polite"></div>
+        <div class="fmsg" id="zayedLagoonsFormMsg" role="status" aria-live="polite" role="alert" aria-live="polite"></div>
       </form>
     </div>
   </section>
@@ -1495,49 +1497,6 @@
       try { localStorage.setItem('lang', l); } catch (e) {}
     }
 
-    /* ── Contact Form ────────────────────────────────────────── */
-    const contactForm = document.getElementById('zayedLagoonsContactForm');
-    const formMsg = document.getElementById('zayedLagoonsFormMsg');
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', e => {
-        e.preventDefault();
-        const btn = document.getElementById('zayedLagoonsSubmitBtn');
-        const lang = document.documentElement.lang;
-
-        btn.disabled = true;
-        btn.style.opacity = '0.7';
-        btn.innerHTML = lang === 'ar'
-          ? 'جاري الإرسال... <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>'
-          : 'Sending... <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>';
-
-        fetch('send_email.php', { method: 'POST', body: new FormData(contactForm) })
-          .then(r => r.json())
-          .then(data => {
-            btn.disabled = false;
-            btn.style.opacity = '1';
-            btn.innerHTML = (lang === 'ar' ? T.ar.fbtn : T.en.fbtn) + ' <i class="fas fa-paper-plane" aria-hidden="true"></i>';
-            if (data.success) {
-              formMsg.className = 'fmsg success';
-              formMsg.innerText = lang === 'ar' ? T.ar.smsg : T.en.smsg;
-              contactForm.reset();
-            } else {
-              formMsg.className = 'fmsg error';
-              formMsg.innerText = lang === 'ar' ? T.ar.emsg : T.en.emsg;
-            }
-            setTimeout(() => { formMsg.className = 'fmsg'; }, 6000);
-          })
-          .catch(() => {
-            btn.disabled = false;
-            btn.style.opacity = '1';
-            btn.innerHTML = (lang === 'ar' ? T.ar.fbtn : T.en.fbtn) + ' <i class="fas fa-paper-plane" aria-hidden="true"></i>';
-            formMsg.className = 'fmsg error';
-            formMsg.innerText = lang === 'ar' ? T.ar.emsg : T.en.emsg;
-            setTimeout(() => { formMsg.className = 'fmsg'; }, 6000);
-          });
-      });
-    }
-
     /* ── Language button handlers ────────────────────────────── */
     document.getElementById('ben').onclick = () => setLang('en');
     document.getElementById('bar').onclick = () => setLang('ar');
@@ -1545,7 +1504,7 @@
     /* ── Restore saved language or default to EN ─────────────── */
     let savedLang = 'en';
     try { savedLang = localStorage.getItem('lang') || 'en'; } catch (e) {}
-    setLang(savedLang);
+    setLang(savedLang === 'ar' ? 'ar' : 'en');
   
     /* ── Floating Bottom Bar — show after scrolling past hero ── */
     const floatBar = document.getElementById('floatBar');
@@ -1589,4 +1548,4 @@ NBIGGallery.init({
   </div>
 
 </body>
-</html>
+  </html>
