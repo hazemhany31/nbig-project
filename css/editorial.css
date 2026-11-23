@@ -39,3 +39,6 @@ section.sky-journey{background:#103c49!important;color:#edf3ef;padding:75px 5%}.
 
 /* Shared sizing and keyboard polish, retaining existing page identity. */
 html{scroll-padding-top:100px}img,video,canvas{max-width:100%}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #bd9359;outline-offset:4px}input,textarea,select{font-size:16px}summary{touch-action:manipulation}h1,h2,h3,p{overflow-wrap:break-word}.skip-link:not(:focus){transform:translateY(-150%);top:0}.sky-model-stage{isolation:isolate}.sky-model-types button{transition:background .18s,color .18s}.sky-model-types button:hover{background:#c3d8d3}.sky-model-types button[aria-pressed=true]:hover{background:#153f48}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Keep long policy links inside narrow reading columns. */
+body a{overflow-wrap:anywhere;word-break:normal}
