@@ -1,0 +1,22 @@
+export function mountJourney(root,media){
+ if(!root||root.dataset.mounted)return ()=>{};root.dataset.mounted='true';
+ const q=s=>root.querySelector(s),qa=s=>[...root.querySelectorAll(s)],video=q('video'),scrub=q('[data-sky-scrub]'),dialog=q('dialog');
+ const listeners=[];let current='exterior',lang='en',plan='typical-120',pending=0,loaded=false,dead=false;
+ const names={'ground-90-a':['Ground floor / 90 m² / A','الدور الأرضي / ٩٠ م² / A'],'ground-90-b':['Ground floor / 90 m² / B','الدور الأرضي / ٩٠ م² / B'],'typical-120':['Typical floor / 120 m²','الدور المتكرر / ١٢٠ م²'],'typical-145':['Typical floor / 145 m²','الدور المتكرر / ١٤٥ م²']};
+ const on=(el,event,fn)=>{el.addEventListener(event,fn);listeners.push([el,event,fn])};
+ function text(){lang=root.closest('[lang]')?.lang||document.documentElement.lang||'en';lang=lang.startsWith('ar')?'ar':'en';qa('[data-sky-en]').forEach(el=>el.textContent=el.dataset[lang==='ar'?'skyAr':'skyEn']);q('[data-sky-plan-label]').textContent=names[plan][lang==='ar'?1:0];sync();}
+ function sync(){q('[data-sky-play]').textContent=lang==='ar'?(video.paused?'تشغيل الجولة':'إيقاف مؤقت'):(video.paused?'Play walkthrough':'Pause walkthrough');q('[data-sky-play]').setAttribute('aria-pressed',String(!video.paused));const t=video.currentTime||0;q('[data-sky-time]').textContent=`00:${String(Math.floor(t)).padStart(2,'0')} / 00:58`;scrub.value=t;scrub.setAttribute('aria-valuetext',`${Math.floor(t)} / 58 seconds`);qa('[data-sky-chapter]').forEach((el,i,all)=>el.setAttribute('aria-pressed',String(t>=+el.dataset.skyChapter&&t<(+(all[i+1]?.dataset.skyChapter)||59))));root.dataset.time=t.toFixed(1);}
+ function load(){if(!loaded){video.src=media.video;loaded=true;video.load();}}
+ function view(v){current=v;q('.sky-viewer').dataset.skyView=v;['exterior','interior','plans'].forEach(n=>q('.sky-'+n).hidden=n!==v);qa('[data-sky-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.skyTab===v)));if(v!=='interior')video.pause();if(v==='interior')load();root.dataset.view=v;}
+ function seek(t){load();pending=t;video.pause();if(video.readyState>=1){video.currentTime=t;sync();}else q('[data-sky-status]').textContent=lang==='ar'?'جاري تحميل الجولة…':'Loading walkthrough…';}
+ qa('[data-sky-tab]').forEach(b=>on(b,'click',()=>view(b.dataset.skyTab)));on(q('[data-sky-enter]'),'click',()=>{view('interior');q('[data-sky-play]').focus({preventScroll:true})});
+ on(q('[data-sky-play]'),'click',()=>{load();if(video.paused){q('[data-sky-status]').textContent='';video.play().catch(()=>{q('[data-sky-status]').textContent=lang==='ar'?'اضغط تشغيل مرة أخرى.':'Press play to start.'})}else video.pause()});
+ on(scrub,'input',()=>seek(+scrub.value));qa('[data-sky-chapter]').forEach(b=>on(b,'click',()=>seek(+b.dataset.skyChapter)));
+ on(video,'loadedmetadata',()=>{video.currentTime=pending;q('[data-sky-status]').textContent='';sync()});on(video,'seeked',()=>{q('[data-sky-status]').textContent='';sync()});['timeupdate','play','pause','ended'].forEach(e=>on(video,e,sync));on(video,'error',()=>{q('[data-sky-status]').textContent=lang==='ar'?'تعذّر تحميل الفيديو. المخططات والصور متاحة.':'The video could not load. Plans and photos are still available.'});
+ qa('[data-sky-plan]').forEach(b=>on(b,'click',()=>{plan=b.dataset.skyPlan;q('[data-sky-plan-img]').src=media.plans[plan];q('[data-sky-plan-img]').alt='Sky Hills '+names[plan][0];qa('[data-sky-plan]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));text()}));
+ on(q('[data-sky-expand]'),'click',()=>{q('dialog img').src=media.plans[plan];q('dialog img').alt='Sky Hills '+names[plan][0];dialog.showModal()});on(q('[data-sky-close]'),'click',()=>dialog.close());on(dialog,'click',e=>{if(e.target===dialog)dialog.close()});
+ const observer=new MutationObserver(text);observer.observe(document.documentElement,{attributes:true,attributeFilter:['lang'],subtree:true});
+ const visibility=()=>{if(document.hidden)video.pause()};on(document,'visibilitychange',visibility);text();view('exterior');
+ return ()=>{dead=true;video.pause();video.removeAttribute('src');video.load();listeners.forEach(([e,n,f])=>e.removeEventListener(n,f));observer.disconnect();delete root.dataset.mounted};
+}
+if(typeof document!=='undefined')document.querySelectorAll('[data-sky-journey]').forEach(root=>mountJourney(root,{video:'https://new-build-egypt.com/images/skyhills-zayedlagonsimages/WhatsApp%20Video%202026-06-06%20at%2001.07.37.mp4',plans:Object.fromEntries(['ground-90-a','ground-90-b','typical-120','typical-145'].map(x=>[x,'images/floor-plans/'+x+'.png']))}));
