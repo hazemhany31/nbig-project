@@ -2,8 +2,6 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <link rel="preload" as="image" href="images/484871684_657128943376706_1775988631967972767_n-mobile.webp" media="(max-width: 768px)" fetchpriority="high" >
-  <link rel="preload" as="image" href="images/484871684_657128943376706_1775988631967972767_n.webp" media="(min-width: 769px)" fetchpriority="high" >
   <link rel="canonical" href="https://new-build-egypt.com/" >
   <meta charset="UTF-8" >
   <meta name="viewport" content="width=device-width,initial-scale=1.0" >
@@ -102,9 +100,12 @@
     }
 
   </style>
+  <link rel="stylesheet" href="css/editorial.css">
+  <script src="js/site-quality.js" defer></script>
 </head>
 
-<body>
+<body class="homepage">
+  <a class="skip-link" href="#home">Skip to content</a>
   <!-- LOADER -->
   <div id="loader">
     <div class="li"><img class="ll" src="images/logo.webp" alt="NBIG" width="80" height="80">
@@ -137,12 +138,10 @@
     <div class="ls"><button class="lb active" id="ben">EN</button><button class="lb" id="bar">AR</button></div>
   </header>
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero" id="home" tabindex="-1">
     <div class="hbg">
-      <picture>
-        <source media="(max-width: 768px)" srcset="images/484871684_657128943376706_1775988631967972767_n-mobile.webp">
-        <img src="images/484871684_657128943376706_1775988631967972767_n.webp" alt="NBIG Developments Hero" style="width: 100%; height: 100%; object-fit: cover;" fetchpriority="high" loading="eager" decoding="async">
-      </picture>
+      <img src="images/sky-hills/facade.jpg" alt="Architectural exterior of Sky Hills" width="1200" height="900" fetchpriority="high" decoding="async">
+      <div class="hero-project-note">SKY HILLS / سكاي هيلز</div>
     </div>
     <div class="hc">
       <div class="htag"><i class="fas fa-gem"></i> <span data-t="ht">Since 2013 — Egypt & UAE</span></div>
@@ -150,18 +149,8 @@
       <p class="hsub" data-t="hs">From smart medical hubs to luxury residences — NBIG Developments creates landmark
         projects that shape Egypt's urban landscape.</p>
       <div class="hbtns">
-        <a href="tel:19938" class="bg" id="hero-hotline-btn">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <span data-t="cn">Hotline 19938</span>
-        </a>
-        <a href="tel:+201112221121" class="bg" id="hero-call-btn">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <span data-t="cn2">Call Now: 01112221121</span>
-        </a>
-        <a href="https://wa.me/201112221121" target="_blank" rel="noopener noreferrer" class="bo" id="hero-wa-btn">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          <span>WhatsApp</span>
-        </a>
+        <a href="#portfolio" class="bg"><span data-t="vp">Explore our projects</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="bo"><span data-t="cu">Talk to our team</span></a>
       </div>
     </div>
     <div class="hscroll" data-t="sc">Scroll to explore</div>
@@ -185,6 +174,87 @@
       <div class="sl" data-t="s4">Happy Clients</div>
     </div>
   </div>
+  <!-- PROJECTS -->
+  <section id="portfolio">
+    <div style="text-align:center;">
+      <span class="stag" data-t="prt">Our Portfolio</span>
+      <h2 class="stitle" data-t="prti">Landmark Projects</h2>
+      <div class="ssep" style="margin:0 auto;"></div>
+      <p style="color:var(--muted);max-width:520px;margin:0 auto;" data-t="prd">Each project reflects our commitment to
+        quality, innovation, and sustainable development.</p>
+    </div>
+    <div class="project-filters" role="group" aria-label="Filter projects">
+      <button type="button" data-project-filter="all" aria-pressed="true" data-t="filterAll">All projects</button>
+      <button type="button" data-project-filter="residential" aria-pressed="false" data-t="cat-res">Residential</button>
+      <button type="button" data-project-filter="medical" aria-pressed="false" data-t="cat-med">Medical</button>
+    </div>
+    <div class="pg reveal">
+      <a href="sky-hills.html" class="pc">
+        <img src="images/sky-hills/facade.jpg" alt="Sky Hills" >
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-res">Residential</div>
+          <div class="pc-name">Sky Hills</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="zayed-hills.html" class="pc">
+        <img src="images/zayedd.jpg" alt="Zayed Hills" >
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-res">Residential</div>
+          <div class="pc-name">Zayed Hills</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="zayed-lagoons.html" class="pc">
+        <img src="images/zx-07.webp" alt="Zayed Lagoons" width="300" height="400" loading="lazy" decoding="async">
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-res">Residential</div>
+          <div class="pc-name">Zayed Lagoons</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="lamar-residence.html" class="pc">
+        <img src="images/lamarrrr.webp" alt="Lamar Residence" width="300" height="400" loading="lazy" decoding="async">
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-res">Residential</div>
+          <div class="pc-name">Lamar Residence</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="cmc.html" class="pc">
+        <img src="images/cmc-1-1.webp" alt="CMC" width="300" height="400" loading="lazy" decoding="async">
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-med">Medical</div>
+          <div class="pc-name">CMC</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="cmc-2.html" class="pc">
+        <img src="images/cmc-2.webp" alt="CMC 2" width="300" height="400" loading="lazy" decoding="async">
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-med">Medical</div>
+          <div class="pc-name">CMC 2</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="new-cmc.html" class="pc">
+        <img src="images/cmcc.webp" alt="New CMC" width="300" height="400" loading="lazy" decoding="async">
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-med">Medical</div>
+          <div class="pc-name">New CMC</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+      <a href="prime.html" class="pc">
+        <img src="images/OFFICE1.webp" alt="Prime Med" width="300" height="400" loading="lazy" decoding="async">
+        <div class="pc-info">
+          <div class="pc-cat" data-t="cat-med">Medical</div>
+          <div class="pc-name">Prime Med</div>
+          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
   <!-- WHY US -->
   <section>
     <div style="text-align:center;">
@@ -260,82 +330,6 @@
       </div>
     </div>
   </section>
-  <!-- PROJECTS -->
-  <section id="portfolio">
-    <div style="text-align:center;">
-      <span class="stag" data-t="prt">Our Portfolio</span>
-      <h2 class="stitle" data-t="prti">Landmark Projects</h2>
-      <div class="ssep" style="margin:0 auto;"></div>
-      <p style="color:var(--muted);max-width:520px;margin:0 auto;" data-t="prd">Each project reflects our commitment to
-        quality, innovation, and sustainable development.</p>
-    </div>
-    <div class="pg reveal">
-      <a href="sky-hills.html" class="pc">
-        <img src="images/sky-hills/facade.jpg" alt="Sky Hills" >
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-res">Residential</div>
-          <div class="pc-name">Sky Hills</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="zayed-hills.html" class="pc">
-        <img src="images/zayedd.jpg" alt="Zayed Hills" >
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-res">Residential</div>
-          <div class="pc-name">Zayed Hills</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="zayed-lagoons.html" class="pc">
-        <img src="images/zx-07.webp" alt="Zayed Lagoons" width="300" height="400" loading="lazy" decoding="async">
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-res">Residential</div>
-          <div class="pc-name">Zayed Lagoons</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="lamar-residence.html" class="pc">
-        <img src="images/lamarrrr.webp" alt="Lamar Residence" width="300" height="400" loading="lazy" decoding="async">
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-res">Residential</div>
-          <div class="pc-name">Lamar Residence</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="cmc.html" class="pc">
-        <img src="images/cmc-1-1.webp" alt="CMC" width="300" height="400" loading="lazy" decoding="async">
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-med">Medical</div>
-          <div class="pc-name">CMC</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="cmc-2.html" class="pc">
-        <img src="images/cmc-2.webp" alt="CMC 2" width="300" height="400" loading="lazy" decoding="async">
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-med">Medical</div>
-          <div class="pc-name">CMC 2</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="new-cmc.html" class="pc">
-        <img src="images/cmcc.webp" alt="New CMC" width="300" height="400" loading="lazy" decoding="async">
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-med">Medical</div>
-          <div class="pc-name">New CMC</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-      <a href="prime.html" class="pc">
-        <img src="images/OFFICE1.webp" alt="Prime Med" width="300" height="400" loading="lazy" decoding="async">
-        <div class="pc-info">
-          <div class="pc-cat" data-t="cat-med">Medical</div>
-          <div class="pc-name">Prime Med</div>
-          <div class="pc-arrow"><i class="fas fa-arrow-right"></i> <span data-t="vpr">View Project</span></div>
-        </div>
-      </a>
-    </div>
-  </section>
   <!-- ABOUT -->
   <section class="fsec" id="about">
     <div class="abt reveal">
@@ -366,10 +360,10 @@
       <div class="ssep" style="margin:0 auto;"></div>
       <p style="color:var(--muted);" data-t="pdfd">Download the full NBIG Developments company profile in PDF format.
       </p>
-      <a href="pdf/NBIG PROFILE .pdf" target="_blank">
+      <a href="pdf/NBIG PROFILE .pdf" target="_blank" rel="noopener noreferrer">
         <div class="pt"><img src="images/sky-hills-pdf-thumbnail.webp" alt="NBIG Brochure" width="300" height="400" loading="lazy" decoding="async"></div>
       </a>
-      <div style="margin-top:24px;"><a href="pdf/NBIG PROFILE .pdf" target="_blank" class="bg"><i
+      <div style="margin-top:24px;"><a href="pdf/NBIG PROFILE .pdf" target="_blank" rel="noopener noreferrer" class="bg"><i
             class="fas fa-file-pdf"></i> <span data-t="pdfv">View Brochure</span></a></div>
     </div>
   </section>
@@ -385,7 +379,7 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.1431474520396!2d30.931883499999994!3d29.988616300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458570fbd44d64f%3A0x441d34473dd495f2!2sNBIG%20development!5e1!3m2!1sen!2seg!4v1777229555500!5m2!1sen!2seg"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps Location"></iframe>
       <div style="text-align:center;margin-top:24px;"><a href="https://maps.app.goo.gl/19ToeuHkrVuKi1Vo9?g_st=iw"
-          target="_blank" class="bo"><i class="fas fa-map-marker-alt"></i> <span data-t="vmb">View on Google
+          target="_blank" rel="noopener noreferrer" class="bo"><i class="fas fa-map-marker-alt"></i> <span data-t="vmb">View on Google
             Maps</span></a></div>
     </div>
   </section>
@@ -431,18 +425,19 @@
       </div>
       <div class="cform">
         <h3 data-t="fm">Send a Message</h3>
-        <form id="contactForm" method="POST" action="send_email.php">
+        <form data-contact-form id="contactForm" method="POST" action="send_email.php">
+          <input type="hidden" name="project" value="NBIG Developments">
           <!-- Honeypot field: hidden from humans, bots will fill it -->
-          <div style="position:absolute;left:-9999px;top:-9999px;visibility:hidden;" aria-hidden="true">
+          <div style="display:none;" aria-hidden="true">
             <label for="website">Website (leave blank)</label>
             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" >
           </div>
           <label data-t="fn">Your Name</label>
-          <input type="text" name="name" required placeholder="Full Name" >
+          <input type="text" autocomplete="name" name="name" required placeholder="Full Name" >
           <label data-t="fe">Your Email</label>
-          <input type="email" name="email" required placeholder="email@example.com" >
+          <input type="email" autocomplete="email" name="email" required placeholder="email@example.com" >
           <label data-t="fph">Your Phone</label>
-          <input type="text" name="number" required placeholder="+20 ..." >
+          <input type="tel" autocomplete="tel" name="number" required placeholder="+20 ..." >
           <label data-t="fmsg">Message <span
               style="color:var(--muted);font-size:.82em;font-weight:400;">(optional)</span></label>
           <textarea name="message" placeholder="How can we help you?"></textarea>
@@ -452,7 +447,7 @@
           <button type="submit" class="bg"
             style="width:100%;justify-content:center;border:none;cursor:pointer;font-size:1rem;" data-t="fsb"><i
               class="fas fa-paper-plane"></i> Send Message</button>
-          <div id="formResult" style="margin-top:18px;text-align:center;font-weight:600;font-size:.9rem;"></div>
+          <div role="status" aria-live="polite" id="formResult" style="margin-top:18px;text-align:center;font-weight:600;font-size:.9rem;"></div>
         </form>
       </div>
     </div>
@@ -491,13 +486,14 @@
     <div class="footer-bottom">
       <div>© 2026 Media Conquest Software LLC. All rights reserved. <span data-t="rg">All rights reserved.</span></div>
       <div class="footer-social">
-        <a href="https://www.facebook.com/nbigdevelopments" target="_blank" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/nbigdevelopments/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@nbigdevelopments6485" target="_blank" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/201112221121" target="_blank" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/nbigdevelopments" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/nbigdevelopments/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@nbigdevelopments6485" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/201112221121" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>const hideLoader = () => { const l = document.getElementById('loader'); if (l) l.classList.add('hidden'); };
 window.addEventListener('load', () => setTimeout(hideLoader, 500));
 setTimeout(hideLoader, 5000); // Fail-safe fallback after 5s
@@ -506,23 +502,10 @@ document.getElementById('mt').onclick = () => document.getElementById('nm').clas
 document.querySelectorAll('#nm a').forEach(a => a.addEventListener('click', () => document.getElementById('nm').classList.remove('open')));
 document.getElementById('mc').onclick = () => document.getElementById('nm').classList.remove('open');
 document.querySelectorAll('.reveal').forEach(el => new IntersectionObserver((e) => { if (e[0].isIntersecting) e[0].target.classList.add('visible'); }, { threshold: 0.1 }).observe(el));
-document.getElementById('contactForm').onsubmit = async function (e) {
-e.preventDefault();
-const res = document.getElementById('formResult');
-const tk = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
-if (!tk) { res.style.color = '#e8c96d'; res.textContent = 'Please complete the reCAPTCHA first.'; return; }
-res.style.color = 'var(--muted)'; res.textContent = 'Sending...';
-try {
-const r = await fetch('send_email.php', { method: 'POST', body: new FormData(e.target) });
-const d = await r.json();
-if (d.success) { res.style.color = '#4caf50'; res.textContent = 'Message sent successfully!'; e.target.reset(); if (typeof grecaptcha !== 'undefined') grecaptcha.reset(); }
-else { res.style.color = '#f44336'; res.textContent = d.message || 'An error occurred.'; }
-} catch { res.style.color = '#f44336'; res.textContent = 'Connection error. Please try again.'; }
-};
-const T = { en: { ns: 'Services', np: 'Projects', na: 'About', nc: 'Contact', ht: 'Since 2013 — Egypt & UAE', h1: 'Building<br/>the <span>Future</span><br/>of Real Estate', hs: "From smart medical hubs to luxury residences — NBIG Developments creates landmark projects that shape Egypt's urban landscape.", vp: 'View Projects', cu: 'Contact Us', sc: 'Scroll to explore', s1: 'Years Experience', s2: 'Landmark Projects', s3: 'Countries', s4: 'Happy Clients', wt: 'Why Choose Us', wti: 'Excellence in Every Detail', w1: 'Innovative Solutions', w1d: 'We use modern technologies to build sustainable and smart communities.', w2: 'Wide Market Reach', w2d: 'Our projects serve local and international markets with high standards.', w3: 'Client Satisfaction', w3d: 'Strong relationships with our clients are the foundation of our success.', w4: 'Customer Focus', w4d: 'We listen, we plan, we deliver — putting client needs first.', svt: 'What We Do', svti: 'Our Services', svd: 'How can we help — NBIG Developments – We build visions.', sv1: 'Architectural Design', sv1d: 'Innovative, sustainable designs that respect the environment.', sv2: 'Urban Development', sv2d: '13+ years of experience in real estate development and urban planning.', sv3: 'Investment Consulting', sv3d: 'Best investment opportunities and flexible payment systems.', sv4: 'Project Management', sv4d: 'Creative project management with quality materials and innovative solutions.', prt: 'Our Portfolio', prti: 'Landmark Projects', prd: 'Each project reflects our commitment to quality, innovation, and sustainable development.', 'cat-res': 'Residential', 'cat-med': 'Medical', vpr: 'View Project', abt: 'Our Story', abti: 'About NBIG Developments', abt1: "At NBIG Developments, we create world-class real estate projects that enhance quality of life — from smart medical hubs to luxury communities.", abt2: "Founded in 2013, we've been a leader in Egypt's real estate industry, with presence in Egypt, UAE, and Saudi Arabia.", ab1: '13+ years of proven real estate development experience', ab2: 'Projects across Egypt, UAE, and Saudi Arabia', ab3: 'Committed to quality, sustainability, and innovation', ab4: 'Full after-sales support and flexible payment plans', pdft: 'Company Profile', pdfti: 'Work History & Brochure', pdfd: 'Download the full NBIG Developments company profile.', pdfv: 'View Brochure', mpt: 'Find Us', mpti: 'Our Location', mpd: 'Strategically positioned in 6th of October City, Giza — Egypt', vmb: 'View on Google Maps', ctt: 'Get in Touch', ctti: 'Contact Us', ctd: 'We would love to hear from you. Reach us through any of the following channels.', loc: 'Our Locations', eg: 'Egypt Branch', ega: 'Villa 4, Elnargis street, Gharb Somid, Central Axis, 6th of October City – Giza', ua: 'UAE Branch', uaa: 'Opal Tower, Business Bay – Dubai – United Arab Emirates', ph: 'Phone', fm: 'Send a Message', fn: 'Your Name', fe: 'Your Email', fph: 'Your Phone', fmsg: 'Message', fsb: 'Send Message', fd: 'Building the future of real estate in Egypt since 2013.', fl: 'Quick Links', pp_link: 'Privacy Policy', fpro: 'Projects', rg: 'All rights reserved.' }, ar: { ns: 'الخدمات', np: 'المشاريع', na: 'عن الشركة', nc: 'اتصل بنا', ht: 'منذ 2013 — مصر والإمارات', h1: 'نبني<br/><span>مستقبل</span><br/>العقارات', hs: 'من المراكز الطبية الذكية إلى المجمعات السكنية الفاخرة — NBIG تخلق مشاريع استثنائية تُشكّل المشهد الحضري في مصر.', vp: 'مشاريعنا', cu: 'اتصل بنا', sc: 'استكشف', s1: 'سنة خبرة', s2: 'مشروع بارز', s3: 'دول', s4: 'عميل سعيد', wt: 'لماذا تختارنا', wti: 'التميز في كل تفصيلة', w1: 'حلول مبتكرة', w1d: 'نستخدم التقنيات الحديثة لبناء مجتمعات ذكية ومستدامة.', w2: 'وصول واسع للسوق', w2d: 'مشاريعنا تخدم الأسواق المحلية والدولية بمعايير عالية.', w3: 'رضا العملاء', w3d: 'العلاقات القوية مع عملائنا هي أساس نجاحنا المستمر.', w4: 'تركيز على العميل', w4d: 'نصغي ونخطط ننجز — مع تقديم احتياجات العملاء دائماً.', svt: 'ما نقدمه', svti: 'خدماتنا', svd: 'كيف يمكننا المساعدة — NBIG تبني الرؤى', sv1: 'التصميم المعماري', sv1d: 'تصاميم مبتكرة ومستدامة تحترم البيئة وتعزز الحياة المجتمعية.', sv2: 'التطوير العمراني', sv2d: 'أكثر من 13 عاماً خبرة في التطوير العقاري وإدارة المشاريع.', sv3: 'الاستشارات الاستثمارية', sv3d: 'أفضل الفرص الاستثمارية وأنظمة دفع مرنة وخدمة ما بعد البيع.', sv4: 'إدارة المشاريع', sv4d: 'إدارة مشاريع إبداعية بمواد جودة عالية وحلول مبتكرة.', prt: 'محفظتنا', prti: 'مشاريع بارزة', prd: 'كل مشروع يعكس التزامنا بالجودة والابتكار والاستدامة.', 'cat-res': 'سكني', 'cat-med': 'طبي', vpr: 'عرض المشروع', abt: 'قصتنا', abti: 'عن NBIG Developments', abt1: 'في NBIG نسعى لإنشاء مشاريع عقارية عالمية تعزز جودة الحياة — من المراكز الطبية الذكية إلى المجتمعات السكنية.', abt2: 'تأسست عام 2013 وكانت رائدة في السوق العقاري المصري مع حضور في مصر والإمارات والسعودية.', ab1: 'أكثر من 13 سنة خبرة مُثبتة في التطوير العقاري', ab2: 'مشاريع في مصر والإمارات والسعودية', ab3: 'التزام بالجودة والاستدامة والابتكار', ab4: 'دعم كامل بعد البيع وأنظمة تقسيط مرنة', pdft: 'الملف التعريفي', pdfti: 'سجل العمل والكتيب', pdfd: 'تحميل الملف التعريفي الكامل لـ NBIG Developments.', pdfv: 'عرض الكتيب', mpt: 'أين نحن', mpti: 'موقعنا', mpd: 'موقع استراتيجي في مدينة 6 أكتوبر، الجيزة — مصر', vmb: 'عرض على خرائط جوجل', ctt: 'تواصل معنا', ctti: 'اتصل بنا', ctd: 'يسعدنا التواصل معك عبر أي من القنوات التالية.', loc: 'مواقعنا', eg: 'الفرع المصري', ega: 'فيلا 4، شارع النرجس، غرب سوميد، المحور المركزي، مدينة 6 أكتوبر — الجيزة', ua: 'الفرع الإماراتي', uaa: 'برج أوبال، بيزنس باي — دبي — الإمارات العربية المتحدة', ph: 'الهاتف', fm: 'أرسل رسالة', fn: 'اسمك', fe: 'بريدك الإلكتروني', fph: 'رقم هاتفك', fmsg: 'رسالتك', fsb: 'إرسال الرسالة', fd: 'نبني مستقبل العقارات في مصر منذ 2013.', fl: 'روابط سريعة', pp_link: 'سياسة الخصوصية', fpro: 'المشاريع', rg: 'جميع الحقوق محفوظة.' } };
-function setLang(l) { document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; document.getElementById('ben').classList.toggle('active', l === 'en'); document.getElementById('bar').classList.toggle('active', l === 'ar'); document.querySelectorAll('[data-t]').forEach(el => { const k = el.getAttribute('data-t'); if (T[l][k] !== undefined) el.innerHTML = T[l][k]; }); localStorage.setItem('lang', l); }
+const T = { en: { filterAll: 'All projects', ns: 'Services', np: 'Projects', na: 'About', nc: 'Contact', ht: 'Since 2013 — Egypt & UAE', h1: 'Places for life.<br/><span>Space for ambition.</span>', hs: "From smart medical hubs to luxury residences — NBIG Developments creates landmark projects that shape Egypt's urban landscape.", vp: 'Explore projects', cu: 'Talk to our team', sc: 'Scroll to explore', s1: 'Years Experience', s2: 'Landmark Projects', s3: 'Countries', s4: 'Happy Clients', wt: 'Why Choose Us', wti: 'Excellence in Every Detail', w1: 'Innovative Solutions', w1d: 'We use modern technologies to build sustainable and smart communities.', w2: 'Wide Market Reach', w2d: 'Our projects serve local and international markets with high standards.', w3: 'Client Satisfaction', w3d: 'Strong relationships with our clients are the foundation of our success.', w4: 'Customer Focus', w4d: 'We listen, we plan, we deliver — putting client needs first.', svt: 'What We Do', svti: 'Our Services', svd: 'How can we help — NBIG Developments – We build visions.', sv1: 'Architectural Design', sv1d: 'Innovative, sustainable designs that respect the environment.', sv2: 'Urban Development', sv2d: '13+ years of experience in real estate development and urban planning.', sv3: 'Investment Consulting', sv3d: 'Best investment opportunities and flexible payment systems.', sv4: 'Project Management', sv4d: 'Creative project management with quality materials and innovative solutions.', prt: 'Our Portfolio', prti: 'Landmark Projects', prd: 'Each project reflects our commitment to quality, innovation, and sustainable development.', 'cat-res': 'Residential', 'cat-med': 'Medical', vpr: 'View Project', abt: 'Our Story', abti: 'About NBIG Developments', abt1: "At NBIG Developments, we create world-class real estate projects that enhance quality of life — from smart medical hubs to luxury communities.", abt2: "Founded in 2013, we've been a leader in Egypt's real estate industry, with presence in Egypt, UAE, and Saudi Arabia.", ab1: '13+ years of proven real estate development experience', ab2: 'Projects across Egypt, UAE, and Saudi Arabia', ab3: 'Committed to quality, sustainability, and innovation', ab4: 'Full after-sales support and flexible payment plans', pdft: 'Company Profile', pdfti: 'Work History & Brochure', pdfd: 'Download the full NBIG Developments company profile.', pdfv: 'View Brochure', mpt: 'Find Us', mpti: 'Our Location', mpd: 'Strategically positioned in 6th of October City, Giza — Egypt', vmb: 'View on Google Maps', ctt: 'Get in Touch', ctti: 'Contact Us', ctd: 'We would love to hear from you. Reach us through any of the following channels.', loc: 'Our Locations', eg: 'Egypt Branch', ega: 'Villa 4, Elnargis street, Gharb Somid, Central Axis, 6th of October City – Giza', ua: 'UAE Branch', uaa: 'Opal Tower, Business Bay – Dubai – United Arab Emirates', ph: 'Phone', fm: 'Send a Message', fn: 'Your Name', fe: 'Your Email', fph: 'Your Phone', fmsg: 'Message', fsb: 'Send Message', fd: 'Building the future of real estate in Egypt since 2013.', fl: 'Quick Links', pp_link: 'Privacy Policy', fpro: 'Projects', rg: 'All rights reserved.' }, ar: { filterAll: 'جميع المشاريع', ns: 'الخدمات', np: 'المشاريع', na: 'عن الشركة', nc: 'اتصل بنا', ht: 'منذ 2013 — مصر والإمارات', h1: 'مكان لحياتك.<br/><span>ومساحة لطموحك.</span>', hs: 'من المراكز الطبية الذكية إلى المجمعات السكنية الفاخرة — NBIG تخلق مشاريع استثنائية تُشكّل المشهد الحضري في مصر.', vp: 'مشاريعنا', cu: 'اتصل بنا', sc: 'استكشف', s1: 'سنة خبرة', s2: 'مشروع بارز', s3: 'دول', s4: 'عميل سعيد', wt: 'لماذا تختارنا', wti: 'التميز في كل تفصيلة', w1: 'حلول مبتكرة', w1d: 'نستخدم التقنيات الحديثة لبناء مجتمعات ذكية ومستدامة.', w2: 'وصول واسع للسوق', w2d: 'مشاريعنا تخدم الأسواق المحلية والدولية بمعايير عالية.', w3: 'رضا العملاء', w3d: 'العلاقات القوية مع عملائنا هي أساس نجاحنا المستمر.', w4: 'تركيز على العميل', w4d: 'نصغي ونخطط ننجز — مع تقديم احتياجات العملاء دائماً.', svt: 'ما نقدمه', svti: 'خدماتنا', svd: 'كيف يمكننا المساعدة — NBIG تبني الرؤى', sv1: 'التصميم المعماري', sv1d: 'تصاميم مبتكرة ومستدامة تحترم البيئة وتعزز الحياة المجتمعية.', sv2: 'التطوير العمراني', sv2d: 'أكثر من 13 عاماً خبرة في التطوير العقاري وإدارة المشاريع.', sv3: 'الاستشارات الاستثمارية', sv3d: 'أفضل الفرص الاستثمارية وأنظمة دفع مرنة وخدمة ما بعد البيع.', sv4: 'إدارة المشاريع', sv4d: 'إدارة مشاريع إبداعية بمواد جودة عالية وحلول مبتكرة.', prt: 'محفظتنا', prti: 'مشاريع بارزة', prd: 'كل مشروع يعكس التزامنا بالجودة والابتكار والاستدامة.', 'cat-res': 'سكني', 'cat-med': 'طبي', vpr: 'عرض المشروع', abt: 'قصتنا', abti: 'عن NBIG Developments', abt1: 'في NBIG نسعى لإنشاء مشاريع عقارية عالمية تعزز جودة الحياة — من المراكز الطبية الذكية إلى المجتمعات السكنية.', abt2: 'تأسست عام 2013 وكانت رائدة في السوق العقاري المصري مع حضور في مصر والإمارات والسعودية.', ab1: 'أكثر من 13 سنة خبرة مُثبتة في التطوير العقاري', ab2: 'مشاريع في مصر والإمارات والسعودية', ab3: 'التزام بالجودة والاستدامة والابتكار', ab4: 'دعم كامل بعد البيع وأنظمة تقسيط مرنة', pdft: 'الملف التعريفي', pdfti: 'سجل العمل والكتيب', pdfd: 'تحميل الملف التعريفي الكامل لـ NBIG Developments.', pdfv: 'عرض الكتيب', mpt: 'أين نحن', mpti: 'موقعنا', mpd: 'موقع استراتيجي في مدينة 6 أكتوبر، الجيزة — مصر', vmb: 'عرض على خرائط جوجل', ctt: 'تواصل معنا', ctti: 'اتصل بنا', ctd: 'يسعدنا التواصل معك عبر أي من القنوات التالية.', loc: 'مواقعنا', eg: 'الفرع المصري', ega: 'فيلا 4، شارع النرجس، غرب سوميد، المحور المركزي، مدينة 6 أكتوبر — الجيزة', ua: 'الفرع الإماراتي', uaa: 'برج أوبال، بيزنس باي — دبي — الإمارات العربية المتحدة', ph: 'الهاتف', fm: 'أرسل رسالة', fn: 'اسمك', fe: 'بريدك الإلكتروني', fph: 'رقم هاتفك', fmsg: 'رسالتك', fsb: 'إرسال الرسالة', fd: 'نبني مستقبل العقارات في مصر منذ 2013.', fl: 'روابط سريعة', pp_link: 'سياسة الخصوصية', fpro: 'المشاريع', rg: 'جميع الحقوق محفوظة.' } };
+function setLang(l) { document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; document.getElementById('ben').classList.toggle('active', l === 'en'); document.getElementById('bar').classList.toggle('active', l === 'ar'); document.querySelectorAll('[data-t]').forEach(el => { const k = el.getAttribute('data-t'); if (T[l][k] !== undefined) el.innerHTML = T[l][k]; }); try { localStorage.setItem('lang', l); } catch {} }
 document.getElementById('ben').onclick = () => setLang('en'); document.getElementById('bar').onclick = () => setLang('ar');
-setLang(localStorage.getItem('lang') || 'en');
+let savedLang = 'en'; try { savedLang = localStorage.getItem('lang'); } catch {} setLang(savedLang === 'ar' ? 'ar' : 'en');
     /* ── Floating Bottom Bar — show after scrolling past hero ── */
     const floatBar = document.getElementById('floatBar');
     if (floatBar) {
@@ -554,4 +537,4 @@ setLang(localStorage.getItem('lang') || 'en');
 
 </body>
 
-</html>
+        </html>
