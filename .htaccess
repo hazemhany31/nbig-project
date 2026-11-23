@@ -1,0 +1,167 @@
+DirectoryIndex index.html index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ============================================================================
+  # 1. Content Negotiation (Accept: text/markdown) for AI Agents
+  # ============================================================================
+  
+  # Catch root directory index requests
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^$ markdown_handler.php?file=index.html [L,QSA]
+
+  # Catch clean URLs directly to map to their correct file
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^sky-hills/?$ markdown_handler.php?file=sky-hills.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^zayed-lagoons/?$ markdown_handler.php?file=zayed-lagoons.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^zayed-hills/?$ markdown_handler.php?file=zayed-hills.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^zayed/?$ markdown_handler.php?file=zayed-hills.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^lamar-residence/?$ markdown_handler.php?file=lamar-residence.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^lamar/?$ markdown_handler.php?file=lamar-residence.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^cmc/?$ markdown_handler.php?file=cmc.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^cmc-2/?$ markdown_handler.php?file=cmc-2.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^cmc2/?$ markdown_handler.php?file=cmc-2.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^new-cmc/?$ markdown_handler.php?file=new-cmc.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^newcmc/?$ markdown_handler.php?file=new-cmc.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^cmc-3/?$ markdown_handler.php?file=new-cmc.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^cmc3/?$ markdown_handler.php?file=new-cmc.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^prime/?$ markdown_handler.php?file=prime.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^privacy-policy/?$ markdown_handler.php?file=privacy-policy.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^account-deletion/?$ markdown_handler.php?file=account-deletion.html [L,QSA]
+
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^ihealthy/account-deletion/?$ markdown_handler.php?file=account-deletion.html [L,QSA]
+
+  # Catch physical HTML files if Accept: text/markdown header is sent
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteCond %{REQUEST_URI} !markdown_handler\.php
+  RewriteRule ^(.*\.html)$ markdown_handler.php?file=$1 [L,QSA]
+
+  # ============================================================================
+  # 2. Dynamic Sitemap & Metadata Discovery Rewrites
+  # ============================================================================
+  RewriteRule ^sitemap\.xml$ sitemap.php [L,NC]
+  RewriteRule ^\.well-known/api-catalog$ .well-known/api-catalog.php [L,NC]
+  RewriteRule ^\.well-known/openid-configuration$ .well-known/openid-configuration.php [L,NC]
+  RewriteRule ^\.well-known/oauth-protected-resource$ .well-known/oauth-protected-resource.php [L,NC]
+  RewriteRule ^\.well-known/mcp/server-card\.json$ .well-known/mcp/server-card.php [L,NC]
+  RewriteRule ^\.well-known/agent-skills/index\.json$ .well-known/agent-skills/index.php [L,NC]
+
+  # ============================================================================
+  # 3. Standard Clean URLs rewrite (Clean URLs for browsers)
+  # ============================================================================
+  RewriteRule ^sky-hills/?$ sky-hills.html [L,NC]
+  RewriteRule ^zayed-lagoons/?$ zayed-lagoons.html [L,NC]
+  RewriteRule ^zayed-hills/?$ zayed-hills.html [L,NC]
+  RewriteRule ^zayed/?$ zayed-hills.html [L,NC]
+  RewriteRule ^lamar-residence/?$ lamar-residence.html [L,NC]
+  RewriteRule ^lamar/?$ lamar-residence.html [L,NC]
+  RewriteRule ^cmc/?$ cmc.html [L,NC]
+  RewriteRule ^cmc-2/?$ cmc-2.html [L,NC]
+  RewriteRule ^cmc2/?$ cmc-2.html [L,NC]
+  RewriteRule ^cmc-3/?$ /new-cmc [R=301,L,NC]
+  RewriteRule ^cmc3/?$ /new-cmc [R=301,L,NC]
+  RewriteRule ^new-cmc/?$ new-cmc.html [L,NC]
+  RewriteRule ^newcmc/?$ new-cmc.html [L,NC]
+  RewriteRule ^tmc/?$ tmc.html [L,NC]
+  RewriteRule ^tiba/?$ tmc.html [L,NC]
+  RewriteRule ^prime/?$ prime.html [L,NC]
+  RewriteRule ^privacy-policy/?$ privacy-policy.html [L,NC]
+  RewriteRule ^account-deletion/?$ account-deletion.html [L,NC]
+  RewriteRule ^ihealthy/account-deletion/?$ account-deletion.html [L,NC]
+
+  # Remove index.html from URL (301 Redirect)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.html [NC]
+  RewriteRule ^(.*)index\.html$ /$1 [L,R=301]
+
+  # Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # Force HTTPS (with loop prevention for Cloudflare, reverse proxies, and localhost)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{HTTP:CF-Visitor} !\"scheme\":\"https\"
+  RewriteCond %{HTTP_HOST} !^localhost [NC]
+  RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+  RewriteCond %{HTTP_HOST} !\.local$ [NC]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+</IfModule>
+
+# ============================================================================
+# HTTP Headers Optimization (Security, CORS, and AI Agent Readiness)
+# ============================================================================
+<IfModule mod_headers.c>
+    # Content Security Policy (Allowing self, inline elements, and reCAPTCHA)
+    Header set Content-Security-Policy "default-src 'self' 'unsafe-eval' 'unsafe-inline' https: data:;"
+
+    # Standard Security Headers
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Set Content-Signal Response Header for AI Agents (RFC compliant)
+    Header set Content-Signal "ai-train=no, search=yes, ai-input=yes"
+
+    # RFC 8288 & RFC 9727 HTTP Link headers on HTML, PHP, and root requests
+    <FilesMatch "\.(html|php)$|^$">
+        Header add Link "</.well-known/api-catalog>; rel=\"api-catalog\""
+        Header add Link "</.well-known/mcp/server-card.json>; rel=\"service-doc\""
+        Header add Link "/sitemap.xml; rel=\"sitemap\""
+        Header add Link "/#contact; rel=\"help\""
+    </FilesMatch>
+
+    # CORS settings to allow federated AI agents to parse discovery endpoints
+    <FilesMatch "\.(json|xml|linkset\+json)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Headers "Accept, Content-Type, Content-Signal"
+        Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    </FilesMatch>
+</IfModule>
+
+# ─── Block direct GET requests to send_email.php ────────────────────────────
+<Files "send_email.php">
+    <LimitExcept POST>
+        Require all denied
+    </LimitExcept>
+</Files>

@@ -1,0 +1,35 @@
+# Robots.txt for NBIG Developments - Fully RFC 9309 compliant
+# Website: https://new-build-egypt.com
+
+User-agent: *
+
+# Block sensitive/internal directories and scripts
+Disallow: /src/
+Disallow: /email_config.php
+Disallow: /send_email.php
+Disallow: /test_smtp.php
+Disallow: /testmail.php
+Disallow: /bulk_htaccess.sh
+Disallow: /bulk_patch.sh
+Disallow: /bulk_rename.sh
+Disallow: /bulk_*.sh
+
+# Explicitly allow primary site structure
+Allow: /
+Allow: /sky-hills
+Allow: /zayed-hills
+Allow: /lamar-residence
+Allow: /cmc
+Allow: /cmc-2
+Allow: /new-cmc
+Allow: /prime
+Allow: /privacy-policy
+Allow: /account-deletion
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /pdf/
+
+# Sitemap reference
+Sitemap: https://new-build-egypt.com/sitemap.xml
+

@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-11",
+  "initial_handover": "December 2027",
+  "final_handover": "December 2028",
+  "files": [
+    {
+      "remote_path": "/public_html/pdf/payment plan -sky hills ..pdf",
+      "bytes": 1731071,
+      "sha256": "a8fc42f1f328b382f89e05120f4ee99c676f907e71a3e66c19f2e74c18d453ce",
+      "ftp_verified": true
+    },
+    {
+      "remote_path": "/public_html/images/payment_plan/sky-hills-payment-current.png",
+      "bytes": 55562,
+      "sha256": "804869b02dff866aae04cd6b0e15b51ebf61f86c01cb8890e546ea7e798e6221",
+      "ftp_verified": true
+    },
+    {
+      "remote_path": "/public_html/sky-hills/pdf/payment plan -sky hills ..pdf",
+      "bytes": 1731071,
+      "sha256": "a8fc42f1f328b382f89e05120f4ee99c676f907e71a3e66c19f2e74c18d453ce",
+      "ftp_verified": true
+    },
+    {
+      "remote_path": "/public_html/sky-hills/images/payment_plan/sky-hills-payment-current.png",
+      "bytes": 55562,
+      "sha256": "804869b02dff866aae04cd6b0e15b51ebf61f86c01cb8890e546ea7e798e6221",
+      "ftp_verified": true
+    },
+    {
+      "remote_path": "/public_html/sky-hills.html",
+      "bytes": 79562,
+      "sha256": "d9e27c9f71baa41a280d7768c0f61f8426993b158b18446647e007ef0a0416c3",
+      "ftp_verified": true
+    },
+    {
+      "remote_path": "/public_html/sky-hills/index.html",
+      "bytes": 80518,
+      "sha256": "07d2ccb5b9c76a3ebeb70eeecee49bd35566bc5594e12083b2644cb59a920f1b",
+      "ftp_verified": true
+    }
+  ],
+  "public_http_checks": [
+    {
+      "path": "sky-hills.html",
+      "status": 200,
+      "bytes": 79562,
+      "sha256": "d9e27c9f71baa41a280d7768c0f61f8426993b158b18446647e007ef0a0416c3",
+      "matches_local": true
+    },
+    {
+      "path": "sky-hills/",
+      "status": 200,
+      "bytes": 80518,
+      "sha256": "07d2ccb5b9c76a3ebeb70eeecee49bd35566bc5594e12083b2644cb59a920f1b",
+      "matches_local": true
+    },
+    {
+      "path": "pdf/payment plan -sky hills ..pdf",
+      "status": 200,
+      "bytes": 1731071,
+      "sha256": "a8fc42f1f328b382f89e05120f4ee99c676f907e71a3e66c19f2e74c18d453ce",
+      "matches_local": true
+    },
+    {
+      "path": "images/payment_plan/sky-hills-payment-current.png",
+      "status": 200,
+      "bytes": 55562,
+      "sha256": "804869b02dff866aae04cd6b0e15b51ebf61f86c01cb8890e546ea7e798e6221",
+      "matches_local": true
+    },
+    {
+      "path": "sky-hills/pdf/payment plan -sky hills ..pdf",
+      "status": 200,
+      "bytes": 1731071,
+      "sha256": "a8fc42f1f328b382f89e05120f4ee99c676f907e71a3e66c19f2e74c18d453ce",
+      "matches_local": true
+    },
+    {
+      "path": "sky-hills/images/payment_plan/sky-hills-payment-current.png",
+      "status": 200,
+      "bytes": 55562,
+      "sha256": "804869b02dff866aae04cd6b0e15b51ebf61f86c01cb8890e546ea7e798e6221",
+      "matches_local": true
+    }
+  ],
+  "status": "published-and-verified"
+}

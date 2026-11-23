@@ -1,0 +1,43 @@
+{
+  "project": "sky-hills",
+  "plans": [
+    {
+      "id": "ground-90-a",
+      "area": 90,
+      "floor": "ground",
+      "variant": "A",
+      "beds": 2,
+      "baths": 1,
+      "image": "images/floor-plans/ground-90-a.png",
+      "pdf": "pdfs/sky-hills-ground-90-a.pdf"
+    },
+    {
+      "id": "ground-90-b",
+      "area": 90,
+      "floor": "ground",
+      "variant": "B",
+      "beds": 2,
+      "baths": 1,
+      "image": "images/floor-plans/ground-90-b.png",
+      "pdf": "pdfs/sky-hills-ground-90-b.pdf"
+    },
+    {
+      "id": "typical-120",
+      "area": 120,
+      "floor": "typical",
+      "beds": 3,
+      "baths": 2,
+      "image": "images/floor-plans/typical-120.png",
+      "pdf": "pdfs/sky-hills-typical-120.pdf"
+    },
+    {
+      "id": "typical-145",
+      "area": 145,
+      "floor": "typical",
+      "beds": 3,
+      "baths": 3,
+      "image": "images/floor-plans/typical-145.png",
+      "pdf": "pdfs/sky-hills-typical-145.pdf"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Sensitive credentials
+email_config.php
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Large zip archives
+output/**/*.zip
+
+# Restricted media (macOS sandbox/TCC com.apple.macl)
+images/skyhills-zayedlagonsimages/

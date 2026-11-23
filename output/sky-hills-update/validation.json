@@ -1,0 +1,30 @@
+[
+  {
+    "site": "/Users/hazemhany/websites/NBIG-PROJECT",
+    "plans": 4,
+    "hero_slides": 3,
+    "gallery_renders": 3,
+    "local_links": "passed",
+    "http_assets": "passed",
+    "inline_js": "passed",
+    "browser_filters_and_lightbox": "passed",
+    "languages": [
+      "en",
+      "ar"
+    ]
+  },
+  {
+    "site": "/Users/hazemhany/websites/sky-hills",
+    "plans": 4,
+    "hero_slides": 3,
+    "gallery_renders": 3,
+    "local_links": "passed",
+    "http_assets": "passed",
+    "inline_js": "passed",
+    "browser_filters_and_lightbox": "passed",
+    "languages": [
+      "en",
+      "ar"
+    ]
+  }
+]
